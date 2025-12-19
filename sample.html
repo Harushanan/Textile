@@ -1,0 +1,2030 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banarasi Silk Saree | Silk & Satin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --maroon: #8B0000;
+            --gold: #D4AF37;
+            --beige: #F5F5DC;
+            --light-beige: #FDF8F0;
+            --dark-brown: #3C2F2F;
+            --white: #FFFFFF;
+            --light-gray: #F8F8F8;
+            --gray: #666666;
+            --shadow: rgba(0, 0, 0, 0.08);
+            --border: #e0e0e0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-brown);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+      
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 20px 0;
+            background-color: var(--light-beige);
+            margin-bottom: 40px;
+        }
+        
+        .breadcrumb-links {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+        }
+        
+        .breadcrumb-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .breadcrumb-links a:hover {
+            color: var(--maroon);
+        }
+        
+        .breadcrumb-links i {
+            font-size: 12px;
+            color: var(--gray);
+        }
+        
+        /* Product Page Container */
+        .product-page {
+            padding-bottom: 80px;
+        }
+        
+        .product-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            margin-bottom: 80px;
+        }
+        
+        /* Product Gallery */
+        .product-gallery {
+            position: sticky;
+            top: 100px;
+        }
+        
+        .main-image {
+            width: 100%;
+            height: 500px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .main-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .image-thumbnails {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .thumbnail {
+            width: 100%;
+            height: 100px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .thumbnail.active {
+            border-color: var(--maroon);
+        }
+        
+        .thumbnail:hover {
+            border-color: var(--maroon);
+        }
+        
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Size Chart Section */
+        .size-chart-section {
+            background-color: var(--light-beige);
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 20px;
+            border: 1px solid var(--border);
+        }
+        
+        .size-chart-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        
+        .size-chart-header h3 {
+            font-size: 20px;
+            color: var(--dark-brown);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .size-chart-toggle {
+            color: var(--gray);
+            transition: transform 0.3s;
+        }
+        
+        .size-chart-content {
+            max-height: 1000px;
+            overflow: hidden;
+            transition: max-height 0.5s ease;
+        }
+        
+        .size-chart-content.collapsed {
+            max-height: 0;
+        }
+        
+        .size-chart-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid var(--border);
+            flex-wrap: wrap;
+        }
+        
+        .size-chart-tab {
+            padding: 10px 20px;
+            background: none;
+            border: none;
+            border-bottom: 3px solid transparent;
+            font-weight: 600;
+            color: var(--gray);
+            cursor: pointer;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+        
+        .size-chart-tab.active {
+            color: var(--maroon);
+            border-bottom-color: var(--maroon);
+        }
+        
+        .size-chart-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        
+        .size-chart-table th,
+        .size-chart-table td {
+            padding: 12px 15px;
+            text-align: center;
+            border: 1px solid var(--border);
+        }
+        
+        .size-chart-table th {
+            background-color: rgba(139, 0, 0, 0.1);
+            font-weight: 600;
+            color: var(--dark-brown);
+        }
+        
+        .size-chart-table td {
+            color: var(--gray);
+        }
+        
+        .size-chart-table tr:nth-child(even) {
+            background-color: rgba(139, 0, 0, 0.05);
+        }
+        
+        .size-chart-table .highlight {
+            background-color: rgba(139, 0, 0, 0.15);
+            font-weight: 600;
+            color: var(--maroon);
+        }
+        
+        .size-chart-note {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+            font-size: 14px;
+            color: var(--gray);
+            border-left: 4px solid var(--maroon);
+        }
+        
+        .size-chart-note h4 {
+            color: var(--dark-brown);
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+        
+        /* Product Info */
+        .product-info {
+            padding-top: 20px;
+        }
+        
+        .product-category {
+            color: var(--maroon);
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+        
+        .product-title {
+            font-size: 36px;
+            color: var(--dark-brown);
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+        
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        
+        .stars {
+            color: var(--gold);
+        }
+        
+        .rating-count {
+            color: var(--gray);
+            font-size: 14px;
+        }
+        
+        .product-price {
+            margin-bottom: 25px;
+        }
+        
+        .current-price {
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--maroon);
+            margin-right: 15px;
+        }
+        
+        .original-price {
+            font-size: 20px;
+            color: var(--gray);
+            text-decoration: line-through;
+        }
+        
+        .discount-badge {
+            background-color: var(--maroon);
+            color: var(--white);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+            margin-left: 15px;
+        }
+        
+        .product-description {
+            margin-bottom: 30px;
+            color: var(--gray);
+            line-height: 1.8;
+        }
+        
+        .product-details-list {
+            margin-bottom: 30px;
+        }
+        
+        .detail-item {
+            display: flex;
+            margin-bottom: 12px;
+        }
+        
+        .detail-label {
+            width: 150px;
+            font-weight: 600;
+            color: var(--dark-brown);
+        }
+        
+        .detail-value {
+            flex: 1;
+            color: var(--gray);
+        }
+        
+        /* Color Selection */
+        .color-selection {
+            margin-bottom: 30px;
+        }
+        
+        .color-options {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .color-option {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 2px solid transparent;
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s;
+        }
+        
+        .color-option.selected {
+            border-color: var(--dark-brown);
+        }
+        
+        .color-option:hover {
+            transform: scale(1.1);
+        }
+        
+        .color-name {
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 12px;
+            white-space: nowrap;
+        }
+        
+        /* Size Selection */
+        .size-selection {
+            margin-bottom: 30px;
+        }
+        
+        .size-options {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .size-option {
+            padding: 12px 20px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            min-width: 70px;
+            font-weight: 500;
+        }
+        
+        .size-option.selected {
+            border-color: var(--maroon);
+            background-color: rgba(139, 0, 0, 0.05);
+            color: var(--maroon);
+            font-weight: 600;
+        }
+        
+        .size-option:hover {
+            border-color: var(--maroon);
+        }
+        
+        .size-option.unavailable {
+            opacity: 0.5;
+            cursor: not-allowed;
+            position: relative;
+        }
+        
+        .size-option.unavailable:hover {
+            border-color: var(--border);
+        }
+        
+        .size-option.unavailable:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            width: 90%;
+            height: 1px;
+            background-color: var(--gray);
+            transform: rotate(-45deg);
+        }
+        
+        .size-guide-note {
+            display: inline-block;
+            margin-top: 10px;
+            color: var(--gray);
+            font-size: 14px;
+            font-style: italic;
+        }
+        
+        /* Quantity Selection */
+        .quantity-selection {
+            margin-bottom: 30px;
+        }
+        
+        .quantity-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .quantity-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: var(--light-beige);
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+        
+        .quantity-btn:hover {
+            background: var(--beige);
+        }
+        
+        .quantity-input {
+            width: 70px;
+            text-align: center;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            padding: 10px;
+            font-size: 16px;
+            font-weight: 600;
+        }
+        
+        .stock-status {
+            color: #28a745;
+            font-weight: 600;
+            margin-top: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        
+        .btn {
+            padding: 14px 32px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            font-family: 'Inter', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .btn-primary {
+            background-color: var(--maroon);
+            color: var(--white);
+            flex: 2;
+        }
+        
+        .btn-primary:hover {
+            background-color: #6a0000;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--maroon);
+            border: 2px solid var(--maroon);
+            flex: 1;
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(139, 0, 0, 0.05);
+            transform: translateY(-2px);
+        }
+        
+        .btn-wishlist {
+            width: 60px;
+            background-color: var(--light-beige);
+            color: var(--dark-brown);
+        }
+        
+        .btn-wishlist:hover {
+            background-color: var(--beige);
+            color: var(--maroon);
+        }
+        
+        .btn-wishlist.active {
+            color: var(--maroon);
+        }
+        
+        .buy-now-btn {
+            background-color: var(--dark-brown);
+            color: var(--white);
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        
+        .buy-now-btn:hover {
+            background-color: #2a1f1f;
+            transform: translateY(-2px);
+        }
+        
+        /* Product Features */
+        .product-features {
+            background-color: var(--light-beige);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(139, 0, 0, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--maroon);
+            font-size: 20px;
+        }
+        
+        /* Tabs Section */
+        .product-tabs {
+            margin-bottom: 80px;
+        }
+        
+        .tabs-header {
+            display: flex;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 30px;
+        }
+        
+        .tab-button {
+            padding: 15px 30px;
+            background: none;
+            border: none;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--gray);
+            cursor: pointer;
+            position: relative;
+            transition: all 0.3s;
+            font-family: 'Cormorant Garamond', serif;
+        }
+        
+        .tab-button.active {
+            color: var(--maroon);
+        }
+        
+        .tab-button.active:after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--maroon);
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 20px 0;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .description-content {
+            line-height: 1.8;
+            color: var(--gray);
+        }
+        
+        .description-content p {
+            margin-bottom: 20px;
+        }
+        
+        .specs-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .specs-table tr {
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .specs-table td {
+            padding: 15px 0;
+        }
+        
+        .specs-table td:first-child {
+            font-weight: 600;
+            width: 200px;
+            color: var(--dark-brown);
+        }
+        
+        .reviews-content .review-item {
+            padding: 25px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .reviewer-name {
+            font-weight: 600;
+            color: var(--dark-brown);
+        }
+        
+        .review-date {
+            color: var(--gray);
+            font-size: 14px;
+        }
+        
+        .review-text {
+            color: var(--gray);
+            line-height: 1.7;
+        }
+        
+        /* Related Products */
+        .related-products {
+            margin-bottom: 80px;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--dark-brown);
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 2px;
+            background-color: var(--gold);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px var(--shadow);
+            transition: all 0.3s ease;
+            background-color: var(--white);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .product-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+        
+        .discount-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--maroon);
+            color: var(--white);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .product-info-small {
+            padding: 20px;
+        }
+        
+        .product-info-small h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--dark-brown);
+        }
+        
+        .product-price-small {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .current-price-small {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--maroon);
+        }
+        
+        .original-price-small {
+            font-size: 16px;
+            color: var(--gray);
+            text-decoration: line-through;
+        }
+        
+        .add-to-cart-small {
+            width: 100%;
+            background-color: var(--beige);
+            color: var(--dark-brown);
+            padding: 12px;
+            border-radius: 4px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .add-to-cart-small:hover {
+            background-color: var(--gold);
+            color: var(--white);
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--dark-brown);
+            color: var(--white);
+            padding: 60px 0 30px;
+            margin-top: 80px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: var(--gold);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 10px;
+        }
+        
+        .footer-links a {
+            display: block;
+            color: var(--beige);
+            text-decoration: none;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--gold);
+            transform: translateY(-3px);
+        }
+        
+        .payment-methods {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .payment-icon {
+            width: 50px;
+            height: 30px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 20px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: var(--beige);
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .nav-center {
+                gap: 25px;
+            }
+            
+            .product-container {
+                gap: 40px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .product-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .product-gallery {
+                position: static;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .size-chart-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-center {
+                display: none;
+            }
+            
+            .logo {
+                font-size: 24px;
+            }
+            
+            .nav-right {
+                gap: 15px;
+            }
+            
+            .product-title {
+                font-size: 28px;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .image-thumbnails {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .main-image {
+                height: 400px;
+            }
+            
+            .detail-item {
+                flex-direction: column;
+                margin-bottom: 15px;
+            }
+            
+            .detail-label {
+                width: 100%;
+                margin-bottom: 5px;
+            }
+            
+            .tabs-header {
+                flex-wrap: wrap;
+            }
+            
+            .tab-button {
+                flex: 1;
+                min-width: 120px;
+                text-align: center;
+                padding: 15px 10px;
+            }
+            
+            .size-chart-tabs {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .size-chart-tab {
+                padding: 8px 15px;
+                text-align: left;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .main-image {
+                height: 300px;
+            }
+            
+            .thumbnail {
+                height: 70px;
+            }
+            
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title h2 {
+                font-size: 28px;
+            }
+            
+            .size-options {
+                gap: 8px;
+            }
+            
+            .size-option {
+                min-width: 60px;
+                padding: 10px 15px;
+            }
+            
+            .size-chart-table th,
+            .size-chart-table td {
+                padding: 8px 10px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+   <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Silk<span>&</span>Satin</a>
+            
+            <div class="nav-center">
+                <a href="./index.html" class="nav-link">Home</a>
+                <a href="./shop.html" class="nav-link">Shop</a>
+                <a href="./singleproducts.html" class="nav-link">Single Product</a>
+            </div>
+            
+            <div class="nav-right">
+                <i class="far fa-heart nav-icon"></i>
+                <a href="./cart.html" class="nav-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">3</span>
+                </a>
+                <i class="far fa-user nav-icon"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-links">
+                <a href="index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="#">Sarees</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="#">Silk Sarees</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>Banarasi Silk Saree</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Product Page -->
+    <div class="product-page">
+        <div class="container">
+            <!-- Product Container -->
+            <div class="product-container">
+                <!-- Product Gallery -->
+                <div class="product-gallery">
+                    <div class="main-image">
+                        <img id="main-product-image" src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Banarasi Silk Saree">
+                    </div>
+                    
+                    <div class="image-thumbnails">
+                        <div class="thumbnail active" data-image="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80">
+                            <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Banarasi Silk Saree Front">
+                        </div>
+                        <div class="thumbnail" data-image="https://images.unsplash.com/photo-1584377332855-75f0d7ab3a2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80">
+                            <img src="https://images.unsplash.com/photo-1584377332855-75f0d7ab3a2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Banarasi Silk Saree Back">
+                        </div>
+                        <div class="thumbnail" data-image="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80">
+                            <img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Banarasi Silk Saree Detail">
+                        </div>
+                        <div class="thumbnail" data-image="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80">
+                            <img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Banarasi Silk Saree Texture">
+                        </div>
+                    </div>
+                    
+                    <!-- Size Chart Section -->
+                    <div class="size-chart-section">
+                        <div class="size-chart-header" id="sizeChartToggle">
+                            <h3>
+                                <i class="fas fa-ruler-combined"></i>
+                                Size Guide & Chart
+                            </h3>
+                            <i class="fas fa-chevron-down size-chart-toggle"></i>
+                        </div>
+                        
+                        <div class="size-chart-content" id="sizeChartContent">
+                            <div class="size-chart-tabs">
+                                <button class="size-chart-tab active" data-chart="blouse">Blouse Size</button>
+                                <button class="size-chart-tab" data-chart="saree">Saree Length</button>
+                                <button class="size-chart-tab" data-chart="petite">Petite Sizes</button>
+                                <button class="size-chart-tab" data-chart="plus">Plus Sizes</button>
+                            </div>
+                            
+                            <!-- Blouse Size Chart -->
+                            <div class="size-chart-table-container" id="blouse-chart">
+                                <table class="size-chart-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Size</th>
+                                            <th>Bust (inches)</th>
+                                            <th>Waist (inches)</th>
+                                            <th>Hips (inches)</th>
+                                            <th>Shoulder (inches)</th>
+                                            <th>Blouse Length</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>XS</td>
+                                            <td>30-32</td>
+                                            <td>24-26</td>
+                                            <td>34-36</td>
+                                            <td>14</td>
+                                            <td>24"</td>
+                                        </tr>
+                                        <tr>
+                                            <td>S</td>
+                                            <td>32-34</td>
+                                            <td>26-28</td>
+                                            <td>36-38</td>
+                                            <td>14.5</td>
+                                            <td>25"</td>
+                                        </tr>
+                                        <tr class="highlight">
+                                            <td>M</td>
+                                            <td>34-36</td>
+                                            <td>28-30</td>
+                                            <td>38-40</td>
+                                            <td>15</td>
+                                            <td>26"</td>
+                                        </tr>
+                                        <tr>
+                                            <td>L</td>
+                                            <td>36-38</td>
+                                            <td>30-32</td>
+                                            <td>40-42</td>
+                                            <td>15.5</td>
+                                            <td>27"</td>
+                                        </tr>
+                                        <tr>
+                                            <td>XL</td>
+                                            <td>38-40</td>
+                                            <td>32-34</td>
+                                            <td>42-44</td>
+                                            <td>16</td>
+                                            <td>28"</td>
+                                        </tr>
+                                        <tr>
+                                            <td>XXL</td>
+                                            <td>40-42</td>
+                                            <td>34-36</td>
+                                            <td>44-46</td>
+                                            <td>16.5</td>
+                                            <td>29"</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <!-- Saree Length Chart -->
+                            <div class="size-chart-table-container" id="saree-chart" style="display: none;">
+                                <table class="size-chart-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Height Range</th>
+                                            <th>Recommended Saree Length</th>
+                                            <th>Pallu Length</th>
+                                            <th>Blouse Piece Included</th>
+                                            <th>Total Fabric</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>4'10" - 5'2"</td>
+                                            <td>5.0 meters</td>
+                                            <td>1.2 meters</td>
+                                            <td>0.8 meters</td>
+                                            <td>5.8 meters</td>
+                                        </tr>
+                                        <tr class="highlight">
+                                            <td>5'2" - 5'6"</td>
+                                            <td>5.5 meters</td>
+                                            <td>1.5 meters</td>
+                                            <td>0.8 meters</td>
+                                            <td>6.3 meters</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5'6" - 5'10"</td>
+                                            <td>6.0 meters</td>
+                                            <td>1.8 meters</td>
+                                            <td>0.9 meters</td>
+                                            <td>6.9 meters</td>
+                                        </tr>
+                                        <tr>
+                                            <td>5'10" - 6'2"</td>
+                                            <td>6.5 meters</td>
+                                            <td>2.0 meters</td>
+                                            <td>0.9 meters</td>
+                                            <td>7.4 meters</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <!-- Petite Sizes Chart -->
+                            <div class="size-chart-table-container" id="petite-chart" style="display: none;">
+                                <table class="size-chart-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Petite Size</th>
+                                            <th>Bust (inches)</th>
+                                            <th>Waist (inches)</th>
+                                            <th>Hips (inches)</th>
+                                            <th>Blouse Length</th>
+                                            <th>Saree Length</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Petite XS</td>
+                                            <td>28-30</td>
+                                            <td>22-24</td>
+                                            <td>32-34</td>
+                                            <td>22"</td>
+                                            <td>4.5 meters</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Petite S</td>
+                                            <td>30-32</td>
+                                            <td>24-26</td>
+                                            <td>34-36</td>
+                                            <td>23"</td>
+                                            <td>4.8 meters</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Petite M</td>
+                                            <td>32-34</td>
+                                            <td>26-28</td>
+                                            <td>36-38</td>
+                                            <td>24"</td>
+                                            <td>5.0 meters</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <!-- Plus Sizes Chart -->
+                            <div class="size-chart-table-container" id="plus-chart" style="display: none;">
+                                <table class="size-chart-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Plus Size</th>
+                                            <th>Bust (inches)</th>
+                                            <th>Waist (inches)</th>
+                                            <th>Hips (inches)</th>
+                                            <th>Blouse Length</th>
+                                            <th>Saree Length</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1X</td>
+                                            <td>42-44</td>
+                                            <td>36-38</td>
+                                            <td>46-48</td>
+                                            <td>29"</td>
+                                            <td>6.0 meters</td>
+                                        </tr>
+                                        <tr>
+                                            <td>2X</td>
+                                            <td>44-46</td>
+                                            <td>38-40</td>
+                                            <td>48-50</td>
+                                            <td>30"</td>
+                                            <td>6.2 meters</td>
+                                        </tr>
+                                        <tr>
+                                            <td>3X</td>
+                                            <td>46-48</td>
+                                            <td>40-42</td>
+                                            <td>50-52</td>
+                                            <td>31"</td>
+                                            <td>6.5 meters</td>
+                                        </tr>
+                                        <tr>
+                                            <td>4X</td>
+                                            <td>48-50</td>
+                                            <td>42-44</td>
+                                            <td>52-54</td>
+                                            <td>32"</td>
+                                            <td>6.8 meters</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div class="size-chart-note">
+                                <h4>How to Measure:</h4>
+                                <p><strong>Bust:</strong> Measure around the fullest part of your bust, keeping the tape parallel to the floor.</p>
+                                <p><strong>Waist:</strong> Measure around the natural waistline, where your body bends side to side.</p>
+                                <p><strong>Hips:</strong> Measure around the fullest part of your hips, approximately 7-8 inches below your waist.</p>
+                                <p><strong>Note:</strong> All measurements are in inches. For custom tailoring, please provide exact measurements.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product Information -->
+                <div class="product-info">
+                    <div class="product-category">Silk Sarees</div>
+                    <h1 class="product-title">Banarasi Silk Saree with Zari Work</h1>
+                    
+                    <div class="product-rating">
+                        <div class="stars">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                        <span class="rating-count">(48 Reviews)</span>
+                    </div>
+                    
+                    <div class="product-price">
+                        <span class="current-price">₹12,999</span>
+                        <span class="original-price">₹16,499</span>
+                        <span class="discount-badge">20% OFF</span>
+                    </div>
+                    
+                    <p class="product-description">
+                        Exquisite Banarasi silk saree featuring intricate zari work and traditional motifs. Handwoven by master artisans in Varanasi, this saree is perfect for weddings, festivals, and special occasions. The rich maroon color with golden accents makes it a timeless addition to your wardrobe.
+                    </p>
+                    
+                    <div class="product-details-list">
+                        <div class="detail-item">
+                            <div class="detail-label">Fabric:</div>
+                            <div class="detail-value">Pure Banarasi Silk</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Work:</div>
+                            <div class="detail-value">Zari, Brocade, Embroidery</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Occasion:</div>
+                            <div class="detail-value">Wedding, Festival, Party</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Blouse:</div>
+                            <div class="detail-value">Included (Unstitched)</div>
+                        </div>
+                        <div class="detail-item">
+                            <div class="detail-label">Care:</div>
+                            <div class="detail-value">Dry Clean Only</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Color Selection -->
+                    <div class="color-selection">
+                        <h3>Color: <span id="selected-color-name">Maroon</span></h3>
+                        <div class="color-options">
+                            <div class="color-option selected" style="background-color: #8B0000;" data-color="Maroon" data-color-code="#8B0000">
+                                <span class="color-name">Maroon</span>
+                            </div>
+                            <div class="color-option" style="background-color: #4B0082;" data-color="Indigo" data-color-code="#4B0082">
+                                <span class="color-name">Indigo</span>
+                            </div>
+                            <div class="color-option" style="background-color: #2F4F4F;" data-color="Dark Slate" data-color-code="#2F4F4F">
+                                <span class="color-name">Dark Slate</span>
+                            </div>
+                            <div class="color-option" style="background-color: #800000;" data-color="Burgundy" data-color-code="#800000">
+                                <span class="color-name">Burgundy</span>
+                            </div>
+                            <div class="color-option" style="background-color: #8B4513;" data-color="Saddle Brown" data-color-code="#8B4513">
+                                <span class="color-name">Brown</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Size Selection -->
+                    <div class="size-selection">
+                        <h3>Select Size:</h3>
+                        <div class="size-options">
+                            <div class="size-option" data-size="XS">XS</div>
+                            <div class="size-option" data-size="S">S</div>
+                            <div class="size-option selected" data-size="M">M</div>
+                            <div class="size-option" data-size="L">L</div>
+                            <div class="size-option" data-size="XL">XL</div>
+                            <div class="size-option unavailable" data-size="XXL">XXL</div>
+                        </div>
+                        <div class="size-guide-note">
+                            <i class="fas fa-info-circle"></i> Refer to the size chart below the images for accurate measurements
+                        </div>
+                    </div>
+                    
+                    <!-- Quantity Selection -->
+                    <div class="quantity-selection">
+                        <h3>Quantity:</h3>
+                        <div class="quantity-controls">
+                            <button class="quantity-btn minus">-</button>
+                            <input type="text" class="quantity-input" value="1" readonly>
+                            <button class="quantity-btn plus">+</button>
+                        </div>
+                        <div class="stock-status">
+                            <i class="fas fa-check-circle"></i> In Stock (Only 5 left)
+                        </div>
+                    </div>
+                    
+                    <!-- Action Buttons -->
+                    <button class="btn buy-now-btn">
+                        <i class="fas fa-bolt"></i> Buy Now
+                    </button>
+                    
+                    <div class="action-buttons">
+                        <button class="btn btn-primary add-to-cart-btn">
+                            <i class="fas fa-shopping-cart"></i> Add to Cart
+                        </button>
+                        <button class="btn btn-secondary btn-wishlist">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    
+                    <!-- Product Features -->
+                    <div class="product-features">
+                        <div class="features-grid">
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-truck"></i>
+                                </div>
+                                <div>
+                                    <h4>Free Shipping</h4>
+                                    <p>On orders above ₹5000</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-undo-alt"></i>
+                                </div>
+                                <div>
+                                    <h4>Easy Returns</h4>
+                                    <p>14-day return policy</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-shield-alt"></i>
+                                </div>
+                                <div>
+                                    <h4>Quality Assured</h4>
+                                    <p>Authentic Banarasi silk</p>
+                                </div>
+                            </div>
+                            <div class="feature-item">
+                                <div class="feature-icon">
+                                    <i class="fas fa-gem"></i>
+                                </div>
+                                <div>
+                                    <h4>Premium Packaging</h4>
+                                    <p>Gift box included</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Product Tabs -->
+            <div class="product-tabs">
+                <div class="tabs-header">
+                    <button class="tab-button active" data-tab="description">Description</button>
+                    <button class="tab-button" data-tab="specifications">Specifications</button>
+                    <button class="tab-button" data-tab="reviews">Reviews (48)</button>
+                    <button class="tab-button" data-tab="shipping">Shipping & Returns</button>
+                </div>
+                
+                <div class="tab-content active" id="description">
+                    <div class="description-content">
+                        <h3>Banarasi Silk Saree - A Timeless Classic</h3>
+                        <p>
+                            This exquisite Banarasi silk saree is handwoven by master artisans in Varanasi, a city renowned for its silk weaving heritage dating back to the Mughal era. Each thread tells a story of tradition and craftsmanship passed down through generations.
+                        </p>
+                        <p>
+                            The saree features intricate zari work using real silver and gold threads, creating beautiful traditional motifs including floral patterns, peacocks, and Mughal-inspired designs. The rich maroon base color is complemented by golden accents, making it perfect for weddings, festivals, and special occasions.
+                        </p>
+                        <h4>Key Features:</h4>
+                        <ul>
+                            <li>Made from pure Banarasi silk with real zari work</li>
+                            <li>Traditional motifs inspired by Mughal architecture</li>
+                            <li>Includes matching unstitched blouse piece</li>
+                            <li>Comes in premium gift packaging</li>
+                            <li>Certificate of authenticity included</li>
+                        </ul>
+                        <p>
+                            The fabric has a luxurious drape and sheen that enhances your silhouette. The weight and texture are ideal for creating elegant pleats and pallu arrangements. This saree is an investment piece that will be cherished for years and passed down as a family heirloom.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="specifications">
+                    <table class="specs-table">
+                        <tr>
+                            <td>Fabric Type</td>
+                            <td>Pure Banarasi Silk</td>
+                        </tr>
+                        <tr>
+                            <td>Weave Type</td>
+                            <td>Handloom</td>
+                        </tr>
+                        <tr>
+                            <td>Work/Embellishment</td>
+                            <td>Zari, Brocade, Embroidery</td>
+                        </tr>
+                        <tr>
+                            <td>Saree Length</td>
+                            <td>5.5 meters (6 yards)</td>
+                        </tr>
+                        <tr>
+                            <td>Blouse Length</td>
+                            <td>0.8 meters (Included)</td>
+                        </tr>
+                        <tr>
+                            <td>Weight</td>
+                            <td>Approx. 900 grams</td>
+                        </tr>
+                        <tr>
+                            <td>Border Width</td>
+                            <td>6 inches</td>
+                        </tr>
+                        <tr>
+                            <td>Pallu Length</td>
+                            <td>1.5 meters</td>
+                        </tr>
+                        <tr>
+                            <td>Care Instructions</td>
+                            <td>Dry clean only. Store in muslin cloth.</td>
+                        </tr>
+                        <tr>
+                            <td>Origin</td>
+                            <td>Handmade in Varanasi, India</td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="tab-content" id="reviews">
+                    <div class="reviews-content">
+                        <div class="review-item">
+                            <div class="review-header">
+                                <div>
+                                    <div class="reviewer-name">Priya Sharma</div>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                </div>
+                                <div class="review-date">12 March 2025</div>
+                            </div>
+                            <p class="review-text">
+                                Absolutely stunning saree! The zari work is exquisite and the fabric quality is exceptional. Received so many compliments at my cousin's wedding. The color is even more beautiful in person than in the photos.
+                            </p>
+                        </div>
+                        
+                        <div class="review-item">
+                            <div class="review-header">
+                                <div>
+                                    <div class="reviewer-name">Anjali Mehta</div>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+                                <div class="review-date">5 March 2025</div>
+                            </div>
+                            <p class="review-text">
+                                Beautiful saree with authentic Banarasi work. The packaging was premium and it arrived earlier than expected. The only reason for 4 stars is that the blouse piece was slightly smaller than expected, but that might just be my requirement.
+                            </p>
+                        </div>
+                        
+                        <div class="review-item">
+                            <div class="review-header">
+                                <div>
+                                    <div class="reviewer-name">Rajeshwari Iyer</div>
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                </div>
+                                <div class="review-date">28 February 2025</div>
+                            </div>
+                            <p class="review-text">
+                                Worth every penny! The craftsmanship is outstanding. This was my first purchase from Silk & Satin and I'm thoroughly impressed. The customer service was also excellent when I had questions about sizing.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <button class="btn btn-secondary" style="margin-top: 30px;">
+                        <i class="fas fa-pen"></i> Write a Review
+                    </button>
+                </div>
+                
+                <div class="tab-content" id="shipping">
+                    <div class="description-content">
+                        <h3>Shipping Information</h3>
+                        <p>
+                            We offer free standard shipping on all orders above ₹5000. For orders below ₹5000, a flat shipping charge of ₹150 applies.
+                        </p>
+                        <h4>Delivery Time:</h4>
+                        <ul>
+                            <li>Metro Cities: 3-5 business days</li>
+                            <li>Other Cities: 5-7 business days</li>
+                            <li>Tier 2/3 Cities: 7-10 business days</li>
+                            <li>International Shipping: 10-15 business days (additional charges apply)</li>
+                        </ul>
+                        
+                        <h3>Return & Exchange Policy</h3>
+                        <p>
+                            We offer a 14-day return/exchange policy from the date of delivery. The product must be in its original condition with all tags intact and in the original packaging.
+                        </p>
+                        <h4>Conditions:</h4>
+                        <ul>
+                            <li>Custom tailored items cannot be returned unless there is a manufacturing defect</li>
+                            <li>Return shipping charges are borne by the customer</li>
+                            <li>Refunds are processed within 5-7 business days after we receive the returned item</li>
+                            <li>Exchanges are subject to product availability</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Related Products -->
+            <div class="related-products">
+                <div class="section-title">
+                    <h2>You May Also Like</h2>
+                </div>
+                
+                <div class="products-grid">
+                    <!-- Product 1 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Silk Kanjeevaram Saree">
+                            <div class="discount-tag">15% OFF</div>
+                        </div>
+                        <div class="product-info-small">
+                            <h3>Silk Kanjeevaram Saree</h3>
+                            <div class="product-price-small">
+                                <span class="current-price-small">₹21,999</span>
+                                <span class="original-price-small">₹25,999</span>
+                            </div>
+                            <button class="add-to-cart-small">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 2 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://i0.wp.com/www.womansplaza.com/wp-content/uploads/2024/07/SG-B-2611.webp?ssl=1&auto=format&fit=crop&w=800&q=80" alt="Designer Lehenga">
+                        </div>
+                        <div class="product-info-small">
+                            <h3>Designer Lehenga</h3>
+                            <div class="product-price-small">
+                                <span class="current-price-small">₹28,499</span>
+                            </div>
+                            <button class="add-to-cart-small">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 3 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1584377332855-75f0d7ab3a2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Chanderi Silk Saree">
+                            <div class="discount-tag">10% OFF</div>
+                        </div>
+                        <div class="product-info-small">
+                            <h3>Chanderi Silk Saree</h3>
+                            <div class="product-price-small">
+                                <span class="current-price-small">₹8,499</span>
+                                <span class="original-price-small">₹9,499</span>
+                            </div>
+                            <button class="add-to-cart-small">Add to Cart</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Product 4 -->
+                    <div class="product-card">
+                        <div class="product-image">
+                            <img src="https://images.unsplash.com/photo-1589310243389-96a5483213a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Men's Kurta Set">
+                        </div>
+                        <div class="product-info-small">
+                            <h3>Men's Silk Kurta Set</h3>
+                            <div class="product-price-small">
+                                <span class="current-price-small">₹5,999</span>
+                            </div>
+                            <button class="add-to-cart-small">Add to Cart</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>Silk & Satin</h3>
+                    <p>Luxury textiles and traditional wear since 1998. We bring you the finest fabrics and craftsmanship for every occasion.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="#">About Us</a>
+                        <a href="#">Shop</a>
+                        <a href="#">New Arrivals</a>
+                        <a href="#">Collections</a>
+                        <a href="#">Blog</a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <div class="footer-links">
+                        <a href="#">Women</a>
+                        <a href="#">Men</a>
+                        <a href="#">Kids</a>
+                        <a href="#">Sarees</a>
+                        <a href="#">Bridal</a>
+                        <a href="#">Accessories</a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Textile Avenue, Mumbai, India</p>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-envelope"></i> info@silkandsatin.com</p>
+                    
+                    <div class="payment-methods">
+                        <div class="payment-icon"><i class="fab fa-cc-visa"></i></div>
+                        <div class="payment-icon"><i class="fab fa-cc-mastercard"></i></div>
+                        <div class="payment-icon"><i class="fab fa-cc-amex"></i></div>
+                        <div class="payment-icon"><i class="fab fa-cc-paypal"></i></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Silk & Satin. All rights reserved. | Designed with <i class="fas fa-heart" style="color: var(--gold);"></i> for textile lovers</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Image Gallery
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            const mainImage = document.getElementById('main-product-image');
+            
+            thumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('click', function() {
+                    // Update main image
+                    const imageUrl = this.getAttribute('data-image');
+                    mainImage.src = imageUrl;
+                    
+                    // Update active thumbnail
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+            
+            // Color Selection
+            const colorOptions = document.querySelectorAll('.color-option');
+            const selectedColorName = document.getElementById('selected-color-name');
+            
+            colorOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    // Update selected color
+                    colorOptions.forEach(c => c.classList.remove('selected'));
+                    this.classList.add('selected');
+                    
+                    // Update color name display
+                    const colorName = this.getAttribute('data-color');
+                    selectedColorName.textContent = colorName;
+                    
+                    // In a real application, you would update product images based on color
+                });
+            });
+            
+            // Size Selection
+            const sizeOptions = document.querySelectorAll('.size-option');
+            
+            sizeOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    if (!this.classList.contains('unavailable')) {
+                        sizeOptions.forEach(s => s.classList.remove('selected'));
+                        this.classList.add('selected');
+                    }
+                });
+            });
+            
+            // Size Chart Toggle
+            const sizeChartToggle = document.getElementById('sizeChartToggle');
+            const sizeChartContent = document.getElementById('sizeChartContent');
+            const sizeChartToggleIcon = sizeChartToggle.querySelector('.size-chart-toggle');
+            
+            sizeChartToggle.addEventListener('click', function() {
+                sizeChartContent.classList.toggle('collapsed');
+                sizeChartToggleIcon.style.transform = sizeChartContent.classList.contains('collapsed') ? 'rotate(0deg)' : 'rotate(180deg)';
+            });
+            
+            // Size Chart Tabs
+            const sizeChartTabs = document.querySelectorAll('.size-chart-tab');
+            const sizeChartTables = document.querySelectorAll('.size-chart-table-container');
+            
+            sizeChartTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const chartType = this.getAttribute('data-chart');
+                    
+                    // Update active tab
+                    sizeChartTabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show selected chart
+                    sizeChartTables.forEach(table => {
+                        if (table.id === `${chartType}-chart`) {
+                            table.style.display = 'block';
+                        } else {
+                            table.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Quantity Controls
+            const minusBtn = document.querySelector('.quantity-btn.minus');
+            const plusBtn = document.querySelector('.quantity-btn.plus');
+            const quantityInput = document.querySelector('.quantity-input');
+            
+            minusBtn.addEventListener('click', function() {
+                let value = parseInt(quantityInput.value);
+                if (value > 1) {
+                    value--;
+                    quantityInput.value = value;
+                }
+            });
+            
+            plusBtn.addEventListener('click', function() {
+                let value = parseInt(quantityInput.value);
+                if (value < 10) { // Assuming max quantity is 10
+                    value++;
+                    quantityInput.value = value;
+                }
+            });
+            
+            // Wishlist Toggle
+            const wishlistBtn = document.querySelector('.btn-wishlist');
+            const wishlistIcon = wishlistBtn.querySelector('i');
+            
+            wishlistBtn.addEventListener('click', function() {
+                if (wishlistIcon.classList.contains('far')) {
+                    wishlistIcon.classList.remove('far');
+                    wishlistIcon.classList.add('fas');
+                    this.classList.add('active');
+                    
+                    // Update cart count in navbar (for wishlist)
+                    const cartCount = document.querySelector('.cart-count');
+                    let count = parseInt(cartCount.textContent);
+                    cartCount.textContent = count + 1;
+                } else {
+                    wishlistIcon.classList.remove('fas');
+                    wishlistIcon.classList.add('far');
+                    this.classList.remove('active');
+                }
+            });
+            
+            // Add to Cart Button
+            const addToCartBtn = document.querySelector('.add-to-cart-btn');
+            
+            addToCartBtn.addEventListener('click', function() {
+                const quantity = parseInt(quantityInput.value);
+                const selectedColor = document.querySelector('.color-option.selected').getAttribute('data-color');
+                const selectedSize = document.querySelector('.size-option.selected').getAttribute('data-size');
+                
+                // Update cart count in navbar
+                const cartCount = document.querySelector('.cart-count');
+                let count = parseInt(cartCount.textContent);
+                cartCount.textContent = count + quantity;
+                
+                // Visual feedback
+                this.innerHTML = '<i class="fas fa-check"></i> Added to Cart';
+                this.style.backgroundColor = '#28a745';
+                
+                setTimeout(() => {
+                    this.innerHTML = '<i class="fas fa-shopping-cart"></i> Add to Cart';
+                    this.style.backgroundColor = '';
+                }, 2000);
+                
+                // In a real application, you would send this data to your cart system
+                console.log('Added to cart:', {
+                    product: 'Banarasi Silk Saree',
+                    quantity: quantity,
+                    color: selectedColor,
+                    size: selectedSize,
+                    price: 12999
+                });
+            });
+            
+            // Buy Now Button
+            const buyNowBtn = document.querySelector('.buy-now-btn');
+            
+            buyNowBtn.addEventListener('click', function() {
+                const quantity = parseInt(quantityInput.value);
+                const selectedColor = document.querySelector('.color-option.selected').getAttribute('data-color');
+                const selectedSize = document.querySelector('.size-option.selected').getAttribute('data-size');
+                
+                // In a real application, you would redirect to checkout with product data
+                alert(`Proceeding to checkout with:\nProduct: Banarasi Silk Saree\nQuantity: ${quantity}\nColor: ${selectedColor}\nSize: ${selectedSize}\nTotal: ₹${(12999 * quantity).toLocaleString('en-IN')}`);
+                
+                // For demo purposes, we'll simulate a redirect
+                // window.location.href = 'checkout.html';
+            });
+            
+            // Related Products Add to Cart
+            const relatedAddToCartBtns = document.querySelectorAll('.add-to-cart-small');
+            
+            relatedAddToCartBtns.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Update cart count in navbar
+                    const cartCount = document.querySelector('.cart-count');
+                    let count = parseInt(cartCount.textContent);
+                    cartCount.textContent = count + 1;
+                    
+                    // Visual feedback
+                    this.textContent = 'Added!';
+                    this.style.backgroundColor = '#28a745';
+                    this.style.color = 'white';
+                    
+                    setTimeout(() => {
+                        this.textContent = 'Add to Cart';
+                        this.style.backgroundColor = '';
+                        this.style.color = '';
+                    }, 1500);
+                });
+            });
+            
+            // Tab Switching
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    // Update active tab button
+                    tabButtons.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show selected tab content
+                    tabContents.forEach(content => {
+                        content.classList.remove('active');
+                        if (content.id === tabId) {
+                            content.classList.add('active');
+                        }
+                    });
+                });
+            });
+            
+            // Navbar scroll effect
+            const navbar = document.querySelector('.navbar');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    navbar.style.padding = '10px 0';
+                    navbar.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
+                } else {
+                    navbar.style.padding = '15px 0';
+                    navbar.style.boxShadow = '0 4px 12px rgba(0,0,0,0.08)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,2095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Textiles | Silk & Satin</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --maroon: #8B0000;
+            --gold: #D4AF37;
+            --beige: #F5F5DC;
+            --light-beige: #FDF8F0;
+            --dark-brown: #3C2F2F;
+            --white: #FFFFFF;
+            --light-gray: #F8F8F8;
+            --gray: #666666;
+            --shadow: rgba(0, 0, 0, 0.08);
+            --border: #e0e0e0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-brown);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation Bar */
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: var(--white);
+            box-shadow: 0 4px 12px var(--shadow);
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            font-weight: 700;
+            color: var(--maroon);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo span {
+            color: var(--gold);
+        }
+        
+        .nav-center {
+            display: flex;
+            gap: 40px;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: var(--dark-brown);
+            font-weight: 500;
+            font-size: 16px;
+            position: relative;
+            padding: 8px 0;
+            transition: color 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: var(--maroon);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--maroon);
+            bottom: 0;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .nav-right {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+        
+        .nav-icon {
+            font-size: 20px;
+            color: var(--dark-brown);
+            cursor: pointer;
+            position: relative;
+            transition: color 0.3s;
+        }
+        
+        .nav-icon:hover {
+            color: var(--maroon);
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background-color: var(--maroon);
+            color: var(--white);
+            font-size: 12px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .search-bar {
+            display: flex;
+            align-items: center;
+            border: 1px solid var(--beige);
+            border-radius: 4px;
+            padding: 8px 12px;
+            width: 200px;
+        }
+        
+        .search-bar input {
+            border: none;
+            outline: none;
+            width: 100%;
+            padding-left: 8px;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 20px 0;
+            background-color: var(--light-beige);
+            margin-bottom: 40px;
+        }
+        
+        .breadcrumb-links {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+        }
+        
+        .breadcrumb-links a {
+            color: var(--gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .breadcrumb-links a:hover {
+            color: var(--maroon);
+        }
+        
+        .breadcrumb-links i {
+            font-size: 12px;
+            color: var(--gray);
+        }
+        
+        /* Shop Page Header */
+        .shop-header {
+            margin-bottom: 40px;
+        }
+        
+        .shop-header h1 {
+            font-size: 36px;
+            color: var(--dark-brown);
+            margin-bottom: 10px;
+        }
+        
+        .shop-header p {
+            color: var(--gray);
+            font-size: 16px;
+        }
+        
+        .shop-controls {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+            padding: 20px 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .product-count {
+            font-weight: 600;
+            color: var(--dark-brown);
+        }
+        
+        .sort-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .sort-controls select {
+            padding: 10px 15px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            background-color: var(--white);
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-brown);
+            min-width: 200px;
+        }
+        
+        .view-controls {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .view-btn {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            background-color: var(--white);
+            color: var(--gray);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .view-btn.active {
+            background-color: var(--maroon);
+            color: var(--white);
+            border-color: var(--maroon);
+        }
+        
+        .view-btn:hover {
+            border-color: var(--maroon);
+        }
+        
+        /* Main Shop Layout */
+        .shop-container {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+        
+        /* Sidebar Filters */
+        .filters-sidebar {
+            background-color: var(--white);
+            border-radius: 10px;
+            box-shadow: 0 5px 15px var(--shadow);
+            padding: 30px;
+            height: fit-content;
+            position: sticky;
+            top: 120px;
+        }
+        
+        .filter-section {
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .filter-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .filter-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+        
+        .filter-title h3 {
+            font-size: 18px;
+            color: var(--dark-brown);
+        }
+        
+        .filter-toggle {
+            color: var(--gray);
+            transition: transform 0.3s;
+        }
+        
+        .filter-content {
+            max-height: 1000px;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .filter-content.collapsed {
+            max-height: 0;
+        }
+        
+        /* Filter Options */
+        .filter-options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        
+        .filter-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+        }
+        
+        .filter-option input[type="checkbox"] {
+            width: 18px;
+            height: 18px;
+            accent-color: var(--maroon);
+        }
+        
+        .filter-option label {
+            cursor: pointer;
+            color: var(--gray);
+            transition: color 0.3s;
+        }
+        
+        .filter-option:hover label {
+            color: var(--dark-brown);
+        }
+        
+        .filter-option .count {
+            margin-left: auto;
+            color: var(--gray);
+            font-size: 14px;
+        }
+        
+        .color-options {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .color-option {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 2px solid transparent;
+            position: relative;
+            transition: all 0.3s;
+        }
+        
+        .color-option.selected {
+            border-color: var(--dark-brown);
+        }
+        
+        .color-option:hover {
+            transform: scale(1.1);
+        }
+        
+        .price-range {
+            margin-top: 15px;
+        }
+        
+        .price-inputs {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        
+        .price-inputs input {
+            width: 100px;
+            padding: 8px 10px;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            text-align: center;
+        }
+        
+        .price-slider {
+            width: 100%;
+            height: 6px;
+            background: var(--light-beige);
+            border-radius: 5px;
+            margin-top: 20px;
+            position: relative;
+        }
+        
+        .price-slider .progress {
+            height: 6px;
+            background: var(--maroon);
+            border-radius: 5px;
+            position: absolute;
+            left: 25%;
+            right: 25%;
+        }
+        
+        .range-input {
+            position: absolute;
+            top: -5px;
+            width: 100%;
+            background: none;
+            pointer-events: none;
+            /* -webkit-appearance: none; */
+        }
+        
+        .range-input::-webkit-slider-thumb {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: var(--maroon);
+            pointer-events: auto;
+            cursor: pointer;
+            -webkit-appearance: none;
+        }
+        
+        .filter-actions {
+            margin-top: 30px;
+            display: flex;
+            gap: 15px;
+        }
+        
+        .btn {
+            padding: 12px 24px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            font-family: 'Inter', sans-serif;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .btn-primary {
+            background-color: var(--maroon);
+            color: var(--white);
+        }
+        
+        .btn-primary:hover {
+            background-color: #6a0000;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--maroon);
+            border: 2px solid var(--maroon);
+        }
+        
+        .btn-secondary:hover {
+            background-color: rgba(139, 0, 0, 0.05);
+            transform: translateY(-2px);
+        }
+        
+        /* Products Grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .products-list {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .product-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px var(--shadow);
+            transition: all 0.3s ease;
+            background-color: var(--white);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .product-image {
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.05);
+        }
+        
+        .discount-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: var(--maroon);
+            color: var(--white);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .new-tag {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background-color: var(--gold);
+            color: var(--white);
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        
+        .wishlist-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            color: var(--gray);
+            background-color: rgba(255,255,255,0.8);
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .wishlist-icon:hover {
+            color: var(--maroon);
+            background-color: var(--white);
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-category {
+            color: var(--gray);
+            font-size: 14px;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .product-info h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--dark-brown);
+        }
+        
+        .product-rating {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .stars {
+            color: var(--gold);
+        }
+        
+        .rating-count {
+            color: var(--gray);
+            font-size: 14px;
+        }
+        
+        .product-price {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .current-price {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--maroon);
+        }
+        
+        .original-price {
+            font-size: 16px;
+            color: var(--gray);
+            text-decoration: line-through;
+        }
+        
+        .product-colors {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .color-dot {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 1px solid var(--border);
+        }
+        
+        .add-to-cart {
+            width: 100%;
+            background-color: var(--beige);
+            color: var(--dark-brown);
+            padding: 12px;
+            border-radius: 4px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .add-to-cart:hover {
+            background-color: var(--gold);
+            color: var(--white);
+        }
+        
+        /* List View Styling */
+        .product-card.list-view {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 30px;
+        }
+        
+        .product-card.list-view .product-image {
+            height: 200px;
+        }
+        
+        .product-card.list-view .product-info {
+            padding: 25px 25px 25px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .product-card.list-view .product-info h3 {
+            font-size: 22px;
+        }
+        
+        .product-card.list-view .product-description {
+            color: var(--gray);
+            margin-bottom: 20px;
+            line-height: 1.7;
+        }
+        
+        .product-card.list-view .product-details {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .product-card.list-view .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--gray);
+        }
+        
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin-top: 60px;
+        }
+        
+        .pagination-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 4px;
+            border: 1px solid var(--border);
+            background-color: var(--white);
+            color: var(--dark-brown);
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .pagination-btn:hover {
+            border-color: var(--maroon);
+            color: var(--maroon);
+        }
+        
+        .pagination-btn.active {
+            background-color: var(--maroon);
+            color: var(--white);
+            border-color: var(--maroon);
+        }
+        
+        /* Mobile Filters Button */
+        .mobile-filters-btn {
+            display: none;
+            padding: 12px 20px;
+            background-color: var(--maroon);
+            color: var(--white);
+            border: none;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-bottom: 20px;
+            width: 100%;
+        }
+        
+        .mobile-filters-btn i {
+            margin-right: 10px;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--dark-brown);
+            color: var(--white);
+            padding: 60px 0 30px;
+            margin-top: 80px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: var(--gold);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 10px;
+        }
+        
+        .footer-links a {
+            display: block;
+            color: var(--beige);
+            text-decoration: none;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-icon {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .social-icon:hover {
+            background-color: var(--gold);
+            transform: translateY(-3px);
+        }
+        
+        .payment-methods {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+        
+        .payment-icon {
+            width: 50px;
+            height: 30px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 20px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: var(--beige);
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .nav-center {
+                gap: 25px;
+            }
+            
+            .shop-container {
+                grid-template-columns: 250px 1fr;
+                gap: 30px;
+            }
+        }
+        
+        @media (max-width: 992px) {
+            .shop-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .filters-sidebar {
+                position: fixed;
+                top: 0;
+                left: -100%;
+                width: 350px;
+                height: 100vh;
+                z-index: 1100;
+                overflow-y: auto;
+                transition: left 0.3s ease;
+                box-shadow: 5px 0 20px rgba(0,0,0,0.1);
+            }
+            
+            .filters-sidebar.active {
+                left: 0;
+            }
+            
+            .mobile-filters-btn {
+                display: block;
+            }
+            
+            .filter-overlay {
+                display: none;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.5);
+                z-index: 1050;
+            }
+            
+            .filter-overlay.active {
+                display: block;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-center {
+                display: none;
+            }
+            
+            .logo {
+                font-size: 24px;
+            }
+            
+            .nav-right {
+                gap: 15px;
+            }
+            
+            .search-bar {
+                display: none;
+            }
+            
+            .shop-controls {
+                flex-direction: column;
+                gap: 20px;
+                align-items: flex-start;
+            }
+            
+            .product-card.list-view {
+                grid-template-columns: 1fr;
+            }
+            
+            .product-card.list-view .product-info {
+                padding: 20px;
+            }
+            
+            .products-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .filters-sidebar {
+                width: 100%;
+            }
+            
+            .shop-header h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Silk<span>&</span>Satin</a>
+            
+            <div class="nav-center">
+                <a href="./index.html" class="nav-link">Home</a>
+                <a href="./shop.html" class="nav-link">Shop</a>
+                <a href="./singleproducts.html" class="nav-link">Single Product</a>
+            </div>
+            
+            <div class="nav-right">
+                <i class="far fa-heart nav-icon"></i>
+                <a href="./cart.html" class="nav-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">3</span>
+                </a>
+                <i class="far fa-user nav-icon"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-links">
+                <a href="index.html">Home</a>
+                <i class="fas fa-chevron-right"></i>
+                <a href="#">Shop</a>
+                <i class="fas fa-chevron-right"></i>
+                <span>All Products</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Shop Page -->
+    <div class="shop-page">
+        <div class="container">
+            <!-- Shop Header -->
+            <div class="shop-header">
+                <h1>Premium Textile Collection</h1>
+                <p>Discover our exquisite collection of traditional and contemporary textiles</p>
+                
+                <div class="shop-controls">
+                    <div class="product-count">Showing 24 of 128 products</div>
+                    
+                    <div class="sort-controls">
+                        <span>Sort by:</span>
+                        <select id="sort-by">
+                            <option value="popular">Most Popular</option>
+                            <option value="newest">Newest Arrivals</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="rating">Highest Rated</option>
+                        </select>
+                    </div>
+                    
+                    <div class="view-controls">
+                        <button class="view-btn grid-view active" data-view="grid">
+                            <i class="fas fa-th-large"></i>
+                        </button>
+                        <button class="view-btn list-view" data-view="list">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Filters Button -->
+            <button class="mobile-filters-btn">
+                <i class="fas fa-filter"></i> Filter Products
+            </button>
+
+            <!-- Filter Overlay -->
+            <div class="filter-overlay"></div>
+
+            <!-- Main Shop Content -->
+            <div class="shop-container">
+                <!-- Sidebar Filters -->
+                <div class="filters-sidebar">
+                    <div class="filter-section">
+                        <div class="filter-title">
+                            <h3>Categories</h3>
+                            <i class="fas fa-chevron-down filter-toggle"></i>
+                        </div>
+                        <div class="filter-content">
+                            <div class="filter-options">
+                                <div class="filter-option">
+                                    <input type="checkbox" id="cat-sarees" checked>
+                                    <label for="cat-sarees">Sarees</label>
+                                    <span class="count">(42)</span>
+                                </div>
+                                <div class="filter-option">
+                                    <input type="checkbox" id="cat-salwar">
+                                    <label for="cat-salwar">Salwar Suits</label>
+                                    <span class="count">(28)</span>
+                                </div>
+                                <div class="filter-option">
+                                    <input type="checkbox" id="cat-lehengas">
+                                    <label for="cat-lehengas">Lehengas</label>
+                                    <span class="count">(18)</span>
+                                </div>
+                                <div class="filter-option">
+                                    <input type="checkbox" id="cat-mens">
+                                    <label for="cat-mens">Men's Wear</label>
+                                    <span class="count">(22)</span>
+                                </div>
+                                <div class="filter-option">
+                                    <input type="checkbox" id="cat-kids">
+                                    <label for="cat-kids">Kids Wear</label>
+                                    <span class="count">(15)</span>
+                                </div>
+                                <div class="filter-option">
+                                    <input type="checkbox" id="cat-accessories">
+                                    <label for="cat-accessories">Accessories</label>
+                                    <span class="count">(8)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <div class="filter-title">
+                            <h3>Subcategories</h3>
+                            <i class="fas fa-chevron-down filter-toggle"></i>
+                        </div>
+                        <div class="filter-content">
+                            <div class="filter-options">
+                                <div class="filter-option">
+                                    <input type="checkbox" id="sub-silk">
+                                    <label for="sub-silk">Silk Sarees</label>
+                                    <span class="count">(24)</span>
+                                </div>
+                                <div class="filter-option">
+                                    <input type="checkbox" id="sub-cotton">
+                                    <label for="sub-cotton">Cotton Sarees</label>
+                                    <span class="count">(12)</span>
+                                </div>
+                                <div class="filter-option">
+                                    <input type="checkbox" id="sub-georgette">
+                                    <label for="sub-georgette">Georgette Sarees</label>
+                                    <span class="count">(6)</span>
+                                </div>
+                                <div class="filter-option">
+                                    <input type="checkbox" id="sub-chiffon">
+                                    <label for="sub-chiffon">Chiffon Sarees</label>
+                                    <span class="count">(8)</span>
+                                </div>
+                                <div class="filter-option">
+                                    <input type="checkbox" id="sub-designers">
+                                    <label for="sub-designers">Designer Sarees</label>
+                                    <span class="count">(16)</span>
+                                </div>
+                                <div class="filter-option">
+                                    <input type="checkbox" id="sub-bridal">
+                                    <label for="sub-bridal">Bridal Collection</label>
+                                    <span class="count">(14)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <div class="filter-title">
+                            <h3>Price Range</h3>
+                            <i class="fas fa-chevron-down filter-toggle"></i>
+                        </div>
+                        <div class="filter-content">
+                            <div class="price-range">
+                                <div class="price-slider">
+                                    <div class="progress"></div>
+                                    <input type="range" class="range-input min-range" min="0" max="50000" value="0">
+                                    <input type="range" class="range-input max-range" min="0" max="50000" value="50000">
+                                </div>
+                                <div class="price-inputs">
+                                    <div>
+                                        <span>Min: </span>
+                                        <input type="text" class="min-price" value="₹0">
+                                    </div>
+                                    <div>
+                                        <span>Max: </span>
+                                        <input type="text" class="max-price" value="₹50,000">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <div class="filter-title">
+                            <h3>Colors</h3>
+                            <i class="fas fa-chevron-down filter-toggle"></i>
+                        </div>
+                        <div class="filter-content">
+                            <div class="color-options">
+                                <div class="color-option selected" style="background-color: #8B0000;" data-color="Maroon"></div>
+                                <div class="color-option" style="background-color: #4B0082;" data-color="Indigo"></div>
+                                <div class="color-option" style="background-color: #2F4F4F;" data-color="Dark Slate"></div>
+                                <div class="color-option" style="background-color: #800000;" data-color="Burgundy"></div>
+                                <div class="color-option" style="background-color: #8B4513;" data-color="Brown"></div>
+                                <div class="color-option" style="background-color: #000080;" data-color="Navy Blue"></div>
+                                <div class="color-option" style="background-color: #006400;" data-color="Dark Green"></div>
+                                <div class="color-option" style="background-color: #D4AF37;" data-color="Gold"></div>
+                                <div class="color-option" style="background-color: #F5F5DC;" data-color="Beige"></div>
+                                <div class="color-option" style="background-color: #FFFFFF; border: 1px solid #ccc;" data-color="White"></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <div class="filter-title">
+                            <h3>Fabric Type</h3>
+                            <i class="fas fa-chevron-down filter-toggle"></i>
+                        </div>
+                        <div class="filter-content">
+                            <div class="filter-options">
+                                <div class="filter-option">
+                                    <input type="checkbox" id="fabric-silk">
+                                    <label for="fabric-silk">Pure Silk</label>
+                                    <span class="count">(32)</span>
+                                </div>
+                                <div class="filter-option">
+                                    <input type="checkbox" id="fabric-cotton">
+                                    <label for="fabric-cotton">Cotton</label>
+                                    <span class="count">(24)</span>
+                                </div>
+                                <div class="filter-option">
+                                    <input type="checkbox" id="fabric-georgette">
+                                    <label for="fabric-georgette">Georgette</label>
+                                    <span class="count">(18)</span>
+                                </div>
+                                <div class="filter-option">
+                                    <input type="checkbox" id="fabric-chiffon">
+                                    <label for="fabric-chiffon">Chiffon</label>
+                                    <span class="count">(12)</span>
+                                </div>
+                                <div class="filter-option">
+                                    <input type="checkbox" id="fabric-velvet">
+                                    <label for="fabric-velvet">Velvet</label>
+                                    <span class="count">(8)</span>
+                                </div>
+                                <div class="filter-option">
+                                    <input type="checkbox" id="fabric-linen">
+                                    <label for="fabric-linen">Linen</label>
+                                    <span class="count">(6)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <div class="filter-title">
+                            <h3>Occasion</h3>
+                            <i class="fas fa-chevron-down filter-toggle"></i>
+                        </div>
+                        <div class="filter-content">
+                            <div class="filter-options">
+                                <div class="filter-option">
+                                    <input type="checkbox" id="occasion-wedding">
+                                    <label for="occasion-wedding">Wedding</label>
+                                    <span class="count">(28)</span>
+                                </div>
+                                <div class="filter-option">
+                                    <input type="checkbox" id="occasion-festival">
+                                    <label for="occasion-festival">Festival</label>
+                                    <span class="count">(36)</span>
+                                </div>
+                                <div class="filter-option">
+                                    <input type="checkbox" id="occasion-party">
+                                    <label for="occasion-party">Party</label>
+                                    <span class="count">(22)</span>
+                                </div>
+                                <div class="filter-option">
+                                    <input type="checkbox" id="occasion-casual">
+                                    <label for="occasion-casual">Casual</label>
+                                    <span class="count">(18)</span>
+                                </div>
+                                <div class="filter-option">
+                                    <input type="checkbox" id="occasion-office">
+                                    <label for="occasion-office">Office Wear</label>
+                                    <span class="count">(12)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-section">
+                        <div class="filter-title">
+                            <h3>Brands</h3>
+                            <i class="fas fa-chevron-down filter-toggle"></i>
+                        </div>
+                        <div class="filter-content">
+                            <div class="filter-options">
+                                <div class="filter-option">
+                                    <input type="checkbox" id="brand-silk">
+                                    <label for="brand-silk">Silk & Satin</label>
+                                    <span class="count">(48)</span>
+                                </div>
+                                <div class="filter-option">
+                                    <input type="checkbox" id="banarasi">
+                                    <label for="banarasi">Banarasi Heritage</label>
+                                    <span class="count">(24)</span>
+                                </div>
+                                <div class="filter-option">
+                                    <input type="checkbox" id="kanjeevaram">
+                                    <label for="kanjeevaram">Kanjeevaram Weaves</label>
+                                    <span class="count">(18)</span>
+                                </div>
+                                <div class="filter-option">
+                                    <input type="checkbox" id="designer">
+                                    <label for="designer">Designer Studio</label>
+                                    <span class="count">(22)</span>
+                                </div>
+                                <div class="filter-option">
+                                    <input type="checkbox" id="traditional">
+                                    <label for="traditional">Traditional Crafts</label>
+                                    <span class="count">(16)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="filter-actions">
+                        <button class="btn btn-primary apply-filters">Apply Filters</button>
+                        <button class="btn btn-secondary clear-filters">Clear All</button>
+                    </div>
+                </div>
+                
+                <!-- Products Display -->
+                <div class="products-display">
+                    <!-- Products Grid/List -->
+                    <div class="products-grid active" id="products-grid-view">
+                        <!-- Product 1 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Banarasi Silk Saree">
+                                <div class="discount-tag">20% OFF</div>
+                                <div class="wishlist-icon">
+                                    <i class="far fa-heart"></i>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-category">Silk Sarees</div>
+                                <h3>Banarasi Silk Saree</h3>
+                                <div class="product-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="rating-count">(48)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">₹12,999</span>
+                                    <span class="original-price">₹16,499</span>
+                                </div>
+                                <div class="product-colors">
+                                    <div class="color-dot" style="background-color: #8B0000;"></div>
+                                    <div class="color-dot" style="background-color: #4B0082;"></div>
+                                    <div class="color-dot" style="background-color: #2F4F4F;"></div>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Product 2 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Kanjeevaram Silk Saree">
+                                <div class="new-tag">NEW</div>
+                                <div class="wishlist-icon">
+                                    <i class="far fa-heart"></i>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-category">Silk Sarees</div>
+                                <h3>Kanjeevaram Silk Saree</h3>
+                                <div class="product-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <span class="rating-count">(36)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">₹21,999</span>
+                                </div>
+                                <div class="product-colors">
+                                    <div class="color-dot" style="background-color: #D4AF37;"></div>
+                                    <div class="color-dot" style="background-color: #8B0000;"></div>
+                                    <div class="color-dot" style="background-color: #006400;"></div>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Product 3 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Cotton Printed Saree">
+                                <div class="discount-tag">15% OFF</div>
+                                <div class="wishlist-icon">
+                                    <i class="far fa-heart"></i>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-category">Cotton Sarees</div>
+                                <h3>Cotton Printed Saree</h3>
+                                <div class="product-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                    </div>
+                                    <span class="rating-count">(52)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">₹4,999</span>
+                                    <span class="original-price">₹5,899</span>
+                                </div>
+                                <div class="product-colors">
+                                    <div class="color-dot" style="background-color: #4B0082;"></div>
+                                    <div class="color-dot" style="background-color: #2F4F4F;"></div>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Product 4 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://i0.wp.com/www.womansplaza.com/wp-content/uploads/2024/07/SG-B-2611.webp?ssl=1&auto=format&fit=crop&w=800&q=80" alt="Designer Lehenga">
+                                <div class="new-tag">NEW</div>
+                                <div class="wishlist-icon">
+                                    <i class="far fa-heart"></i>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-category">Lehengas</div>
+                                <h3>Designer Lehenga</h3>
+                                <div class="product-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="rating-count">(24)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">₹28,499</span>
+                                </div>
+                                <div class="product-colors">
+                                    <div class="color-dot" style="background-color: #8B0000;"></div>
+                                    <div class="color-dot" style="background-color: #D4AF37;"></div>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Product 5 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1589310243389-96a5483213a8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Men's Kurta Set">
+                                <div class="discount-tag">10% OFF</div>
+                                <div class="wishlist-icon">
+                                    <i class="far fa-heart"></i>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-category">Men's Wear</div>
+                                <h3>Men's Silk Kurta Set</h3>
+                                <div class="product-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <span class="rating-count">(41)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">₹5,999</span>
+                                    <span class="original-price">₹6,699</span>
+                                </div>
+                                <div class="product-colors">
+                                    <div class="color-dot" style="background-color: #000080;"></div>
+                                    <div class="color-dot" style="background-color: #2F4F4F;"></div>
+                                    <div class="color-dot" style="background-color: #8B4513;"></div>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Product 6 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS42QJUveKsrxVrYVYu3q5EhFJr4mE9RDlHoA&s" alt="Men's Sherwani">
+                                <div class="new-tag">NEW</div>
+                                <div class="wishlist-icon">
+                                    <i class="far fa-heart"></i>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-category">Men's Wear</div>
+                                <h3>Men's Sherwani</h3>
+                                <div class="product-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="rating-count">(18)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">₹18,999</span>
+                                </div>
+                                <div class="product-colors">
+                                    <div class="color-dot" style="background-color: #000080;"></div>
+                                    <div class="color-dot" style="background-color: #8B0000;"></div>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Product 7 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Chanderi Silk Saree">
+                                <div class="discount-tag">25% OFF</div>
+                                <div class="wishlist-icon">
+                                    <i class="far fa-heart"></i>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-category">Silk Sarees</div>
+                                <h3>Chanderi Silk Saree</h3>
+                                <div class="product-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                    <span class="rating-count">(29)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">₹8,499</span>
+                                    <span class="original-price">₹11,299</span>
+                                </div>
+                                <div class="product-colors">
+                                    <div class="color-dot" style="background-color: #F5F5DC;"></div>
+                                    <div class="color-dot" style="background-color: #D4AF37;"></div>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+                        
+                        <!-- Product 8 -->
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="https://images.unsplash.com/photo-1566174053879-31528523f8ae?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Designer Anarkali Suit">
+                                <div class="wishlist-icon">
+                                    <i class="far fa-heart"></i>
+                                </div>
+                            </div>
+                            <div class="product-info">
+                                <div class="product-category">Salwar Suits</div>
+                                <h3>Designer Anarkali Suit</h3>
+                                <div class="product-rating">
+                                    <div class="stars">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star-half-alt"></i>
+                                    </div>
+                                    <span class="rating-count">(36)</span>
+                                </div>
+                                <div class="product-price">
+                                    <span class="current-price">₹9,999</span>
+                                </div>
+                                <div class="product-colors">
+                                    <div class="color-dot" style="background-color: #8B0000;"></div>
+                                    <div class="color-dot" style="background-color: #4B0082;"></div>
+                                    <div class="color-dot" style="background-color: #006400;"></div>
+                                </div>
+                                <button class="add-to-cart">Add to Cart</button>
+                            </div>
+                        </div>
+
+                        <!-- Product 9 -->
+<div class="product-card">
+    <div class="product-image">
+        <img src="https://www.labeldee.in/cdn/shop/products/ABC_1424.jpg?v=1678860115&width=1445" alt="Embroidered Kurti">
+        <div class="wishlist-icon">
+            <i class="far fa-heart"></i>
+        </div>
+    </div>
+    <div class="product-info">
+        <div class="product-category">Kurtis</div>
+        <h3>Embroidered Kurti</h3>
+        <div class="product-rating">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <span class="rating-count">(24)</span>
+        </div>
+        <div class="product-price">
+            <span class="current-price">₹2,499</span>
+        </div>
+        <div class="product-colors">
+            <div class="color-dot" style="background-color: #FF4500;"></div>
+            <div class="color-dot" style="background-color: #1E90FF;"></div>
+            <div class="color-dot" style="background-color: #228B22;"></div>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+</div>
+
+<!-- Product 10 -->
+<div class="product-card">
+    <div class="product-image">
+        <img src="https://vootbuy.in/cdn/shop/products/photo1651478070.jpg?v=1712824406&width=1024" alt="Silk Saree">
+        <div class="wishlist-icon">
+            <i class="far fa-heart"></i>
+        </div>
+    </div>
+    <div class="product-info">
+        <div class="product-category">Sarees</div>
+        <h3>Banarasi Silk Saree</h3>
+        <div class="product-rating">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <span class="rating-count">(42)</span>
+        </div>
+        <div class="product-price">
+            <span class="current-price">₹12,999</span>
+        </div>
+        <div class="product-colors">
+            <div class="color-dot" style="background-color: #FFD700;"></div>
+            <div class="color-dot" style="background-color: #8B0000;"></div>
+            <div class="color-dot" style="background-color: #4B0082;"></div>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+</div>
+
+<!-- Product 11 -->
+<div class="product-card">
+    <div class="product-image">
+        <img src="https://kohsh.in/cdn/shop/products/1M7A9701-scaled.jpg?v=1742625063" alt="Cotton Palazzo Set">
+        <div class="wishlist-icon">
+            <i class="far fa-heart"></i>
+        </div>
+    </div>
+    <div class="product-info">
+        <div class="product-category">Palazzo Sets</div>
+        <h3>Cotton Palazzo Set</h3>
+        <div class="product-rating">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <span class="rating-count">(18)</span>
+        </div>
+        <div class="product-price">
+            <span class="current-price">₹3,499</span>
+        </div>
+        <div class="product-colors">
+            <div class="color-dot" style="background-color: #FF6347;"></div>
+            <div class="color-dot" style="background-color: #00CED1;"></div>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+</div>
+
+<!-- Product 12 -->
+<div class="product-card">
+    <div class="product-image">
+        <img src="https://img.kwcdn.com/product/fancy/525c8599-1a2a-4ce5-8008-46b39b64860f.jpg?imageMogr2/auto-orient%7CimageView2/2/w/800/q/70/format/webp" alt="Party Gown">
+        <div class="wishlist-icon">
+            <i class="far fa-heart"></i>
+        </div>
+    </div>
+    <div class="product-info">
+        <div class="product-category">Evening Wear</div>
+        <h3>Elegant Party Gown</h3>
+        <div class="product-rating">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <i class="far fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <span class="rating-count">(12)</span>
+        </div>
+        <div class="product-price">
+            <span class="current-price">₹6,999</span>
+        </div>
+        <div class="product-colors">
+            <div class="color-dot" style="background-color: #FF1493;"></div>
+            <div class="color-dot" style="background-color: #00008B;"></div>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+</div>
+
+<!-- Product 13 -->
+<div class="product-card">
+    <div class="product-image">
+        <img src="https://i5.walmartimages.com/seo/Mens-Shirts-Men-s-Shirt-And-Shorts-Set-Summer-Outfits-Casual-Short-Sleeve-Suit-For-Men-2-Piece-Shorts-Tracksuit-Set-White_e452e939-6573-44b7-b1f9-908d608249dc.4679a07fa3c5b8ce7b2c24b261840796.jpeg?odnHeight=768&odnWidth=768&odnBg=FFFFFF&odnDynImageQuality=10&format=avif" alt="Casual Shirt Set">
+        <div class="wishlist-icon">
+            <i class="far fa-heart"></i>
+        </div>
+    </div>
+    <div class="product-info">
+        <div class="product-category">Shirts</div>
+        <h3>Casual Shirt Set</h3>
+        <div class="product-rating">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <span class="rating-count">(30)</span>
+        </div>
+        <div class="product-price">
+            <span class="current-price">₹1,799</span>
+        </div>
+        <div class="product-colors">
+            <div class="color-dot" style="background-color: #0000FF;"></div>
+            <div class="color-dot" style="background-color: #FF4500;"></div>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+</div>
+
+<!-- Product 14 -->
+<div class="product-card">
+    <div class="product-image">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgx-UnzqwRUAgdCiZ1kU4_9kWlr_JdRb9nLQ&s" alt="Designer Lehenga">
+        <div class="wishlist-icon">
+            <i class="far fa-heart"></i>
+        </div>
+    </div>
+    <div class="product-info">
+        <div class="product-category">Lehengas</div>
+        <h3>Designer Lehenga</h3>
+        <div class="product-rating">
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <i class="far fa-star"></i>
+            </div>
+            <span class="rating-count">(20)</span>
+        </div>
+        <div class="product-price">
+            <span class="current-price">₹15,999</span>
+        </div>
+        <div class="product-colors">
+            <div class="color-dot" style="background-color: #8B0000;"></div>
+            <div class="color-dot" style="background-color: #FF8C00;"></div>
+            <div class="color-dot" style="background-color: #4B0082;"></div>
+        </div>
+        <button class="add-to-cart">Add to Cart</button>
+    </div>
+</div>
+
+                    </div>
+
+
+                    
+                    
+            
+                    
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <button class="pagination-btn">
+                            <i class="fas fa-chevron-left"></i>
+                        </button>
+                        <button class="pagination-btn active">1</button>
+                        <button class="pagination-btn">2</button>
+                        <button class="pagination-btn">3</button>
+                        <button class="pagination-btn">4</button>
+                        <button class="pagination-btn">5</button>
+                        <button class="pagination-btn">
+                            <i class="fas fa-chevron-right"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>Silk & Satin</h3>
+                    <p>Luxury textiles and traditional wear since 1998. We bring you the finest fabrics and craftsmanship for every occasion.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="#">About Us</a>
+                        <a href="#">Shop</a>
+                        <a href="#">New Arrivals</a>
+                        <a href="#">Collections</a>
+                        <a href="#">Blog</a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <div class="footer-links">
+                        <a href="#">Women</a>
+                        <a href="#">Men</a>
+                        <a href="#">Kids</a>
+                        <a href="#">Sarees</a>
+                        <a href="#">Bridal</a>
+                        <a href="#">Accessories</a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Textile Avenue, Mumbai, India</p>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-envelope"></i> info@silkandsatin.com</p>
+                    
+                    <div class="payment-methods">
+                        <div class="payment-icon"><i class="fab fa-cc-visa"></i></div>
+                        <div class="payment-icon"><i class="fab fa-cc-mastercard"></i></div>
+                        <div class="payment-icon"><i class="fab fa-cc-amex"></i></div>
+                        <div class="payment-icon"><i class="fab fa-cc-paypal"></i></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Silk & Satin. All rights reserved. | Designed with <i class="fas fa-heart" style="color: var(--gold);"></i> for textile lovers</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Toggle filter sections
+            const filterTitles = document.querySelectorAll('.filter-title');
+            filterTitles.forEach(title => {
+                title.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const toggleIcon = this.querySelector('.filter-toggle');
+                    
+                    content.classList.toggle('collapsed');
+                    toggleIcon.style.transform = content.classList.contains('collapsed') ? 'rotate(0deg)' : 'rotate(180deg)';
+                });
+            });
+            
+            // Color selection
+            const colorOptions = document.querySelectorAll('.color-option');
+            colorOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    colorOptions.forEach(c => c.classList.remove('selected'));
+                    this.classList.add('selected');
+                });
+            });
+            
+            // Price range slider
+            const minRange = document.querySelector('.min-range');
+            const maxRange = document.querySelector('.max-range');
+            const minPriceInput = document.querySelector('.min-price');
+            const maxPriceInput = document.querySelector('.max-price');
+            const progress = document.querySelector('.progress');
+            
+            let minGap = 1000; // Minimum price gap
+            
+            function updatePriceSlider() {
+                let minVal = parseInt(minRange.value);
+                let maxVal = parseInt(maxRange.value);
+                
+                if (maxVal - minVal < minGap) {
+                    if (minRange === document.activeElement) {
+                        minRange.value = maxVal - minGap;
+                    } else {
+                        maxRange.value = minVal + minGap;
+                    }
+                }
+                
+                // Update progress bar
+                let minPercent = (minVal / minRange.max) * 100;
+                let maxPercent = (maxVal / maxRange.max) * 100;
+                progress.style.left = minPercent + "%";
+                progress.style.right = (100 - maxPercent) + "%";
+                
+                // Update price inputs
+                minPriceInput.value = "₹" + minVal.toLocaleString('en-IN');
+                maxPriceInput.value = "₹" + maxVal.toLocaleString('en-IN');
+            }
+            
+            minRange.addEventListener('input', updatePriceSlider);
+            maxRange.addEventListener('input', updatePriceSlider);
+            
+            // Price input validation
+            minPriceInput.addEventListener('change', function() {
+                let value = parseInt(this.value.replace('₹', '').replace(',', ''));
+                if (value < 0) value = 0;
+                if (value > parseInt(maxRange.value) - minGap) {
+                    value = parseInt(maxRange.value) - minGap;
+                }
+                minRange.value = value;
+                updatePriceSlider();
+            });
+            
+            maxPriceInput.addEventListener('change', function() {
+                let value = parseInt(this.value.replace('₹', '').replace(',', ''));
+                if (value > 50000) value = 50000;
+                if (value < parseInt(minRange.value) + minGap) {
+                    value = parseInt(minRange.value) + minGap;
+                }
+                maxRange.value = value;
+                updatePriceSlider();
+            });
+            
+            // View toggle (Grid/List)
+            const viewButtons = document.querySelectorAll('.view-btn');
+            const productsGridView = document.getElementById('products-grid-view');
+            const productsListView = document.getElementById('products-list-view');
+            
+            viewButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const viewType = this.getAttribute('data-view');
+                    
+                    // Update active button
+                    viewButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Show appropriate view
+                    if (viewType === 'grid') {
+                        productsGridView.classList.add('active');
+                        productsListView.classList.remove('active');
+                    } else {
+                        productsGridView.classList.remove('active');
+                        productsListView.classList.add('active');
+                    }
+                });
+            });
+            
+            // Wishlist toggle
+            const wishlistIcons = document.querySelectorAll('.wishlist-icon i');
+            wishlistIcons.forEach(icon => {
+                icon.addEventListener('click', function() {
+                    if (this.classList.contains('far')) {
+                        this.classList.remove('far');
+                        this.classList.add('fas');
+                        this.style.color = '#8B0000';
+                    } else {
+                        this.classList.remove('fas');
+                        this.classList.add('far');
+                        this.style.color = '#666666';
+                    }
+                });
+            });
+            
+            // Add to cart buttons
+            const addToCartButtons = document.querySelectorAll('.add-to-cart');
+            const cartCount = document.querySelector('.cart-count');
+            let cartItems = 3;
+            
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    cartItems++;
+                    cartCount.textContent = cartItems;
+                    
+                    // Visual feedback
+                    const originalText = this.textContent;
+                    this.textContent = 'Added to Cart';
+                    this.style.backgroundColor = '#28a745';
+                    this.style.color = 'white';
+                    
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                        this.style.backgroundColor = '';
+                        this.style.color = '';
+                    }, 1500);
+                });
+            });
+            
+            // Apply filters button
+            const applyFiltersBtn = document.querySelector('.apply-filters');
+            applyFiltersBtn.addEventListener('click', function() {
+                // Collect all filter values
+                const categories = [];
+                document.querySelectorAll('input[id^="cat-"]:checked').forEach(cb => {
+                    categories.push(cb.nextElementSibling.textContent);
+                });
+                
+                const priceRange = {
+                    min: parseInt(minRange.value),
+                    max: parseInt(maxRange.value)
+                };
+                
+                const selectedColor = document.querySelector('.color-option.selected').getAttribute('data-color');
+                
+                // In a real application, you would filter products here
+                alert(`Filters applied:\nCategories: ${categories.join(', ')}\nPrice: ₹${priceRange.min.toLocaleString('en-IN')} - ₹${priceRange.max.toLocaleString('en-IN')}\nColor: ${selectedColor}`);
+            });
+            
+            // Clear filters button
+            const clearFiltersBtn = document.querySelector('.clear-filters');
+            clearFiltersBtn.addEventListener('click', function() {
+                // Clear all checkboxes
+                document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
+                    cb.checked = false;
+                });
+                
+                // Reset price range
+                minRange.value = 0;
+                maxRange.value = 50000;
+                updatePriceSlider();
+                
+                // Reset colors
+                colorOptions.forEach(c => c.classList.remove('selected'));
+                colorOptions[0].classList.add('selected');
+                
+                alert('All filters cleared');
+            });
+            
+            // Mobile filters toggle
+            const mobileFiltersBtn = document.querySelector('.mobile-filters-btn');
+            const filtersSidebar = document.querySelector('.filters-sidebar');
+            const filterOverlay = document.querySelector('.filter-overlay');
+            
+            mobileFiltersBtn.addEventListener('click', function() {
+                filtersSidebar.classList.add('active');
+                filterOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+            
+            filterOverlay.addEventListener('click', function() {
+                filtersSidebar.classList.remove('active');
+                filterOverlay.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+            
+            // Close sidebar on escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    filtersSidebar.classList.remove('active');
+                    filterOverlay.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Sort by functionality
+            const sortSelect = document.getElementById('sort-by');
+            sortSelect.addEventListener('change', function() {
+                const sortValue = this.value;
+                let sortMessage = '';
+                
+                switch(sortValue) {
+                    case 'popular':
+                        sortMessage = 'Sorting by: Most Popular';
+                        break;
+                    case 'newest':
+                        sortMessage = 'Sorting by: Newest Arrivals';
+                        break;
+                    case 'price-low':
+                        sortMessage = 'Sorting by: Price: Low to High';
+                        break;
+                    case 'price-high':
+                        sortMessage = 'Sorting by: Price: High to Low';
+                        break;
+                    case 'rating':
+                        sortMessage = 'Sorting by: Highest Rated';
+                        break;
+                }
+                
+                // In a real application, you would sort products here
+                console.log(sortMessage);
+            });
+            
+            // Pagination
+            const paginationBtns = document.querySelectorAll('.pagination-btn');
+            paginationBtns.forEach(button => {
+                button.addEventListener('click', function() {
+                    if (!this.querySelector('i')) {
+                        paginationBtns.forEach(btn => btn.classList.remove('active'));
+                        this.classList.add('active');
+                    }
+                });
+            });
+            
+            // Navbar scroll effect
+            const navbar = document.querySelector('.navbar');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 50) {
+                    navbar.style.padding = '10px 0';
+                    navbar.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
+                } else {
+                    navbar.style.padding = '15px 0';
+                    navbar.style.boxShadow = '0 4px 12px rgba(0,0,0,0.08)';
+                }
+            });
+            
+            // Initialize price slider
+            updatePriceSlider();
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Silk & Satin | Premium Textile Showroom</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+   <!-- Navigation -->
+   <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">Silk<span>&</span>Satin</a>
+            
+            <div class="nav-center">
+                <a href="./index.html" class="nav-link">Home</a>
+                <a href="./shop.html" class="nav-link">Shop</a>
+                <a href="./singleproducts.html" class="nav-link">Single Product</a>
+            </div>
+            
+            <div class="nav-right">
+                <i class="far fa-heart nav-icon"></i>
+                <a href="./cart.html" class="nav-icon">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span class="cart-count">3</span>
+                </a>
+                <i class="far fa-user nav-icon"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content will be loaded here -->
+    <div id="page-content">
+        <template id="cart-page">
+        <div class="page-container">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Shopping Cart</h1>
+                    <p>Review your items and proceed to checkout</p>
+                </div>
+                
+                <div class="cart-container">
+                    <div class="cart-items">
+                        <div class="cart-item">
+                            <div class="cart-item-image">
+                                <img src="https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Banarasi Silk Saree">
+                            </div>
+                            <div class="cart-item-details">
+                                <h3>Banarasi Silk Saree</h3>
+                                <p>Size: One Size | Color: <span class="cart-item-color" style="background-color: #8B0000;"></span> Maroon</p>
+                                <p>Fabric: Pure Silk | Embellishment: Zari Work</p>
+                            </div>
+                            <div class="cart-item-price">₹12,999</div>
+                            <div class="cart-item-quantity">
+                                <button class="quantity-btn minus">-</button>
+                                <input type="text" class="quantity-input" value="1" readonly>
+                                <button class="quantity-btn plus">+</button>
+                            </div>
+                            <button class="remove-item"><i class="far fa-trash-alt"></i></button>
+                        </div>
+                        
+                        <div class="cart-item">
+                            <div class="cart-item-image">
+                                <img src="https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Cotton Printed Saree">
+                            </div>
+                            <div class="cart-item-details">
+                                <h3>Cotton Printed Saree</h3>
+                                <p>Size: One Size | Color: <span class="cart-item-color" style="background-color: #4B0082;"></span> Indigo</p>
+                                <p>Fabric: Pure Cotton | Print: Block Print</p>
+                            </div>
+                            <div class="cart-item-price">₹4,999</div>
+                            <div class="cart-item-quantity">
+                                <button class="quantity-btn minus">-</button>
+                                <input type="text" class="quantity-input" value="1" readonly>
+                                <button class="quantity-btn plus">+</button>
+                            </div>
+                            <button class="remove-item"><i class="far fa-trash-alt"></i></button>
+                        </div>
+                        
+                        <div class="cart-item">
+                            <div class="cart-item-image">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS42QJUveKsrxVrYVYu3q5EhFJr4mE9RDlHoA&s" alt="Men's Sherwani">
+                            </div>
+                            <div class="cart-item-details">
+                                <h3>Men's Sherwani</h3>
+                                <p>Size: L | Color: <span class="cart-item-color" style="background-color: #000080;"></span> Navy Blue</p>
+                                <p>Fabric: Silk & Velvet | Occasion: Wedding</p>
+                            </div>
+                            <div class="cart-item-price">₹18,999</div>
+                            <div class="cart-item-quantity">
+                                <button class="quantity-btn minus">-</button>
+                                <input type="text" class="quantity-input" value="1" readonly>
+                                <button class="quantity-btn plus">+</button>
+                            </div>
+                            <button class="remove-item"><i class="far fa-trash-alt"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="cart-summary">
+                        <h3>Order Summary</h3>
+                        <div class="summary-row">
+                            <span>Subtotal (3 items)</span>
+                            <span>₹36,997</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Shipping</span>
+                            <span>₹0</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Tax (18% GST)</span>
+                            <span>₹6,659</span>
+                        </div>
+                        
+                        <div class="discount-box">
+                            <p>Have a promo code?</p>
+                            <div class="discount-input">
+                                <input type="text" placeholder="Enter code">
+                                <button class="btn btn-primary" style="padding: 10px 15px;">Apply</button>
+                            </div>
+                        </div>
+                        
+                        <div class="summary-row total">
+                            <span>Total</span>
+                            <span>₹43,656</span>
+                        </div>
+                        
+                        <div class="cart-actions">
+                            <a href="checkout.html" class="btn btn-primary btn-large">Proceed to Checkout</a>
+                            <a href="index.html" class="btn btn-secondary">Continue Shopping</a>
+                        </div>
+                        
+                        <div class="security-info">
+                            <i class="fas fa-lock"></i>
+                            <div>
+                                <p style="font-weight: 600; margin-bottom: 5px;">Secure Checkout</p>
+                                <p style="font-size: 14px;">Your payment information is encrypted and secure.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <template id="checkout-page">
+        <div class="page-container">
+            <div class="container">
+                <div class="page-header">
+                    <h1>Checkout</h1>
+                    <p>Complete your purchase with secure payment</p>
+                </div>
+                
+                <div class="checkout-container">
+                    <div class="checkout-form">
+                        <div class="checkout-section">
+                            <h2>Shipping Information</h2>
+                            <div class="form-group">
+                                <label for="full-name">Full Name *</label>
+                                <input type="text" id="full-name" placeholder="Enter your full name" required>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" placeholder="Enter your email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number *</label>
+                                    <input type="tel" id="phone" placeholder="Enter your phone number" required>
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="address">Shipping Address *</label>
+                                <textarea id="address" rows="3" placeholder="Enter your complete address" required></textarea>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="city">City *</label>
+                                    <input type="text" id="city" placeholder="Enter your city" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="state">State *</label>
+                                    <select id="state" required>
+                                        <option value="">Select State</option>
+                                        <option value="MH">Maharashtra</option>
+                                        <option value="DL">Delhi</option>
+                                        <option value="KA">Karnataka</option>
+                                        <option value="TN">Tamil Nadu</option>
+                                        <option value="GJ">Gujarat</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="pincode">Pincode *</label>
+                                    <input type="text" id="pincode" placeholder="Enter pincode" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="country">Country</label>
+                                    <input type="text" id="country" value="India" readonly>
+                                </div>
+                            </div>
+                            
+                            <div class="save-info">
+                                <input type="checkbox" id="save-address">
+                                <label for="save-address" style="display: inline; margin: 0;">Save this address for future orders</label>
+                            </div>
+                        </div>
+                        
+                        <div class="checkout-section">
+                            <h2>Payment Method</h2>
+                            <div class="payment-methods-list">
+                                <div class="payment-method selected">
+                                    <input type="radio" id="credit-card" name="payment" checked>
+                                    <div class="payment-icon-small">
+                                        <i class="far fa-credit-card"></i>
+                                    </div>
+                                    <div>
+                                        <label for="credit-card" style="display: inline; margin: 0; font-weight: 600;">Credit/Debit Card</label>
+                                        <p style="font-size: 14px; color: var(--gray); margin-top: 5px;">Pay securely with your card</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="payment-method">
+                                    <input type="radio" id="net-banking" name="payment">
+                                    <div class="payment-icon-small">
+                                        <i class="fas fa-university"></i>
+                                    </div>
+                                    <div>
+                                        <label for="net-banking" style="display: inline; margin: 0; font-weight: 600;">Net Banking</label>
+                                        <p style="font-size: 14px; color: var(--gray); margin-top: 5px;">Instant payment through your bank</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="payment-method">
+                                    <input type="radio" id="upi" name="payment">
+                                    <div class="payment-icon-small">
+                                        <i class="fas fa-mobile-alt"></i>
+                                    </div>
+                                    <div>
+                                        <label for="upi" style="display: inline; margin: 0; font-weight: 600;">UPI</label>
+                                        <p style="font-size: 14px; color: var(--gray); margin-top: 5px;">Pay using UPI apps</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="payment-method">
+                                    <input type="radio" id="cod" name="payment">
+                                    <div class="payment-icon-small">
+                                        <i class="fas fa-money-bill-wave"></i>
+                                    </div>
+                                    <div>
+                                        <label for="cod" style="display: inline; margin: 0; font-weight: 600;">Cash on Delivery</label>
+                                        <p style="font-size: 14px; color: var(--gray); margin-top: 5px;">Pay when you receive your order</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="card-details" style="margin-top: 30px;">
+                                <div class="form-group">
+                                    <label for="card-number">Card Number *</label>
+                                    <input type="text" id="card-number" placeholder="1234 5678 9012 3456">
+                                </div>
+                                
+                                <div class="form-row">
+                                    <div class="form-group">
+                                        <label for="expiry-date">Expiry Date *</label>
+                                        <input type="text" id="expiry-date" placeholder="MM/YY">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cvv">CVV *</label>
+                                        <input type="text" id="cvv" placeholder="123">
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="card-name">Name on Card *</label>
+                                    <input type="text" id="card-name" placeholder="Enter name as on card">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="checkout-section">
+                            <h2>Order Notes</h2>
+                            <div class="form-group">
+                                <label for="order-notes">Additional instructions (optional)</label>
+                                <textarea id="order-notes" rows="4" placeholder="Any special instructions for delivery or packaging"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="order-summary">
+                        <h2>Order Summary</h2>
+                        <div class="order-items">
+                            <div class="order-item">
+                                <div class="item-name">Banarasi Silk Saree</div>
+                                <div class="item-quantity">x1</div>
+                                <div class="item-price">₹12,999</div>
+                            </div>
+                            <div class="order-item">
+                                <div class="item-name">Cotton Printed Saree</div>
+                                <div class="item-quantity">x1</div>
+                                <div class="item-price">₹4,999</div>
+                            </div>
+                            <div class="order-item">
+                                <div class="item-name">Men's Sherwani</div>
+                                <div class="item-quantity">x1</div>
+                                <div class="item-price">₹18,999</div>
+                            </div>
+                        </div>
+                        
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span>₹36,997</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Shipping</span>
+                            <span>Free</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Tax (18%)</span>
+                            <span>₹6,659</span>
+                        </div>
+                        
+                        <div class="summary-row total">
+                            <span>Total</span>
+                            <span>₹43,656</span>
+                        </div>
+                        
+                        <div class="security-info">
+                            <i class="fas fa-lock"></i>
+                            <div>
+                                <p style="font-weight: 600; margin-bottom: 5px;">Secure Payment</p>
+                                <p style="font-size: 14px;">SSL encrypted connection</p>
+                            </div>
+                        </div>
+                        
+                        <button id="place-order" class="btn btn-primary btn-large" style="width: 100%; margin-top: 30px; padding: 16px;">Place Order</button>
+                        
+                        <p style="text-align: center; margin-top: 15px; font-size: 14px; color: var(--gray);">
+                            By placing your order, you agree to our <a href="#" style="color: var(--maroon);">Terms & Conditions</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </template>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>Silk & Satin</h3>
+                    <p>Luxury textiles and traditional wear since 1998. We bring you the finest fabrics and craftsmanship for every occasion.</p>
+                    <div class="social-icons">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <div class="footer-links">
+                        <a href="index.html">Home</a>
+                        <a href="#">About Us</a>
+                        <a href="#">Shop</a>
+                        <a href="#">New Arrivals</a>
+                        <a href="#">Collections</a>
+                        <a href="#">Blog</a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Categories</h3>
+                    <div class="footer-links">
+                        <a href="#">Women</a>
+                        <a href="#">Men</a>
+                        <a href="#">Kids</a>
+                        <a href="#">Sarees</a>
+                        <a href="#">Bridal</a>
+                        <a href="#">Accessories</a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Textile Avenue, Mumbai, India</p>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
+                    <p><i class="fas fa-envelope"></i> info@silkandsatin.com</p>
+                    
+                    <div class="payment-methods">
+                        <div class="payment-icon"><i class="fab fa-cc-visa"></i></div>
+                        <div class="payment-icon"><i class="fab fa-cc-mastercard"></i></div>
+                        <div class="payment-icon"><i class="fab fa-cc-amex"></i></div>
+                        <div class="payment-icon"><i class="fab fa-cc-paypal"></i></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Silk & Satin. All rights reserved. | Designed with <i class="fas fa-heart" style="color: var(--gold);"></i> for textile lovers</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for SPA navigation and functionality -->
+    <script>
+        // Simple SPA navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get page content container
+            const pageContent = document.getElementById('page-content');
+            
+            // Function to load page
+            function loadPage(pageId) {
+                const template = document.getElementById(pageId);
+                if (template) {
+                    pageContent.innerHTML = template.innerHTML;
+                    document.title = getPageTitle(pageId);
+                    initPageScripts(pageId);
+                }
+            }
+            
+            // Get page title based on page ID
+            function getPageTitle(pageId) {
+                const titles = {
+                    'home-page': 'Silk & Satin | Premium Textile Showroom',
+                    'cart-page': 'Shopping Cart | Silk & Satin',
+                    'checkout-page': 'Checkout | Silk & Satin'
+                };
+                return titles[pageId] || 'Silk & Satin';
+            }
+            
+            // Initialize page-specific scripts
+            function initPageScripts(pageId) {
+                if (pageId === 'home-page') {
+                    initHomePage();
+                } else if (pageId === 'cart-page') {
+                    initCartPage();
+                } else if (pageId === 'checkout-page') {
+                    initCheckoutPage();
+                }
+            }
+            
+            // Home page initialization
+            function initHomePage() {
+                // Hero Slider
+                const slides = document.querySelectorAll('.slide');
+                let currentSlide = 0;
+                
+                function showSlide(index) {
+                    slides.forEach(slide => slide.classList.remove('active'));
+                    slides[index].classList.add('active');
+                }
+                
+                function nextSlide() {
+                    currentSlide = (currentSlide + 1) % slides.length;
+                    showSlide(currentSlide);
+                }
+                
+                showSlide(currentSlide);
+                setInterval(nextSlide, 5000);
+                
+                // Wishlist toggle
+                const wishlistIcons = document.querySelectorAll('.wishlist-icon i');
+                wishlistIcons.forEach(icon => {
+                    icon.addEventListener('click', function() {
+                        if (this.classList.contains('far')) {
+                            this.classList.remove('far');
+                            this.classList.add('fas');
+                            this.style.color = '#8B0000';
+                        } else {
+                            this.classList.remove('fas');
+                            this.classList.add('far');
+                            this.style.color = '#666666';
+                        }
+                    });
+                });
+                
+                // Add to cart buttons
+                const addToCartButtons = document.querySelectorAll('.add-to-cart');
+                const cartCount = document.querySelector('.cart-count');
+                let cartItems = 3;
+                
+                addToCartButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        cartItems++;
+                        cartCount.textContent = cartItems;
+                        
+                        // Visual feedback
+                        this.textContent = 'Added to Cart';
+                        this.style.backgroundColor = '#28a745';
+                        
+                        setTimeout(() => {
+                            this.textContent = 'Add to Cart';
+                            this.style.backgroundColor = '';
+                        }, 1500);
+                    });
+                });
+                
+                // Navbar scroll effect
+                const navbar = document.querySelector('.navbar');
+                window.addEventListener('scroll', function() {
+                    if (window.scrollY > 50) {
+                        navbar.style.padding = '10px 0';
+                        navbar.style.boxShadow = '0 4px 12px rgba(0,0,0,0.1)';
+                    } else {
+                        navbar.style.padding = '15px 0';
+                        navbar.style.boxShadow = '0 4px 12px rgba(0,0,0,0.08)';
+                    }
+                });
+            }
+            
+            // Cart page initialization
+            function initCartPage() {
+                // Quantity controls
+                const quantityButtons = document.querySelectorAll('.quantity-btn');
+                quantityButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const input = this.parentElement.querySelector('.quantity-input');
+                        let value = parseInt(input.value);
+                        
+                        if (this.classList.contains('plus')) {
+                            value++;
+                        } else if (this.classList.contains('minus') && value > 1) {
+                            value--;
+                        }
+                        
+                        input.value = value;
+                        updateCartTotal();
+                    });
+                });
+                
+                // Remove item
+                const removeButtons = document.querySelectorAll('.remove-item');
+                removeButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const cartItem = this.closest('.cart-item');
+                        cartItem.style.opacity = '0';
+                        cartItem.style.height = cartItem.offsetHeight + 'px';
+                        
+                        setTimeout(() => {
+                            cartItem.remove();
+                            updateCartTotal();
+                            updateCartCount();
+                        }, 300);
+                    });
+                });
+                
+                // Update cart total
+                function updateCartTotal() {
+                    const cartItems = document.querySelectorAll('.cart-item');
+                    let subtotal = 0;
+                    
+                    cartItems.forEach(item => {
+                        const priceText = item.querySelector('.cart-item-price').textContent;
+                        const price = parseInt(priceText.replace('₹', '').replace(',', ''));
+                        const quantity = parseInt(item.querySelector('.quantity-input').value);
+                        
+                        subtotal += price * quantity;
+                    });
+                    
+                    const tax = Math.round(subtotal * 0.18);
+                    const total = subtotal + tax;
+                    
+                    document.querySelectorAll('.summary-row')[0].querySelector('span:last-child').textContent = `₹${subtotal.toLocaleString('en-IN')}`;
+                    document.querySelectorAll('.summary-row')[2].querySelector('span:last-child').textContent = `₹${tax.toLocaleString('en-IN')}`;
+                    document.querySelector('.summary-row.total span:last-child').textContent = `₹${total.toLocaleString('en-IN')}`;
+                }
+                
+                // Update cart count in navbar
+                function updateCartCount() {
+                    const cartCount = document.querySelector('.cart-count');
+                    const cartItems = document.querySelectorAll('.cart-item');
+                    cartCount.textContent = cartItems.length;
+                }
+            }
+            
+            // Checkout page initialization
+            function initCheckoutPage() {
+                // Payment method selection
+                const paymentMethods = document.querySelectorAll('.payment-method');
+                const cardDetails = document.getElementById('card-details');
+                
+                paymentMethods.forEach(method => {
+                    method.addEventListener('click', function() {
+                        paymentMethods.forEach(m => m.classList.remove('selected'));
+                        this.classList.add('selected');
+                        
+                        const paymentType = this.querySelector('input').id;
+                        if (paymentType === 'credit-card') {
+                            cardDetails.style.display = 'block';
+                        } else {
+                            cardDetails.style.display = 'none';
+                        }
+                    });
+                });
+                
+                // Place order button
+                const placeOrderBtn = document.getElementById('place-order');
+                placeOrderBtn.addEventListener('click', function() {
+                    // Validate form
+                    const requiredFields = document.querySelectorAll('input[required], select[required], textarea[required]');
+                    let isValid = true;
+                    
+                    requiredFields.forEach(field => {
+                        if (!field.value.trim()) {
+                            isValid = false;
+                            field.style.borderColor = 'red';
+                        } else {
+                            field.style.borderColor = '';
+                        }
+                    });
+                    
+                    if (isValid) {
+                        // Show success message
+                        this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Processing...';
+                        this.disabled = true;
+                        
+                        setTimeout(() => {
+                            alert('Order placed successfully! Thank you for your purchase.');
+                            // In a real application, you would redirect to a confirmation page
+                        }, 2000);
+                    } else {
+                        alert('Please fill in all required fields.');
+                    }
+                });
+                
+                // Format card number
+                const cardNumberInput = document.getElementById('card-number');
+                cardNumberInput.addEventListener('input', function(e) {
+                    let value = e.target.value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
+                    let formattedValue = value.replace(/(\d{4})/g, '$1 ').trim();
+                    e.target.value = formattedValue;
+                });
+                
+                // Format expiry date
+                const expiryInput = document.getElementById('expiry-date');
+                expiryInput.addEventListener('input', function(e) {
+                    let value = e.target.value.replace(/\s+/g, '').replace(/[^0-9]/gi, '');
+                    if (value.length >= 2) {
+                        value = value.slice(0, 2) + '/' + value.slice(2, 4);
+                    }
+                    e.target.value = value;
+                });
+            }
+            
+            // Determine which page to load based on URL or default to home
+            function getCurrentPage() {
+                const path = window.location.pathname;
+                if (path.includes('cart.html')) {
+                    return 'cart-page';
+                } else if (path.includes('checkout.html')) {
+                    return 'checkout-page';
+                }
+                return 'home-page';
+            }
+            
+            // Initialize the page
+            loadPage(getCurrentPage());
+            
+            // Navigation links
+            document.querySelectorAll('a[href="index.html"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    loadPage('home-page');
+                    window.history.pushState({}, '', 'index.html');
+                });
+            });
+            
+            document.querySelectorAll('a[href="cart.html"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    loadPage('cart-page');
+                    window.history.pushState({}, '', 'cart.html');
+                });
+            });
+            
+            document.querySelectorAll('a[href="checkout.html"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    loadPage('checkout-page');
+                    window.history.pushState({}, '', 'checkout.html');
+                });
+            });
+            
+            // Handle browser back/forward
+            window.addEventListener('popstate', function() {
+                loadPage(getCurrentPage());
+            });
+        });
+    </script>
+</body>
+</html>
